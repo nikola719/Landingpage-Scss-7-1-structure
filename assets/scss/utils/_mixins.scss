@@ -1,0 +1,161 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if ($type == max) {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+@mixin heading1() {
+  font-size: 32.98px;
+  line-height: 0.989;
+  @include mq("tablet") {
+    font-size: 61px;
+  }
+  @include mq("phone-wide") {
+  }
+  @include mq("phone") {
+  }
+}
+@mixin heading2() {
+  font-size: 28px;
+  line-height: 1.025;
+  @include mq("tablet") {
+    font-size: 37px;
+  }
+  @include mq("desktop-small") {
+    font-size: 56px;
+  }
+  @include mq("phablet") {
+  }
+  @include mq("phone-wide") {
+  }
+  @include mq("phone") {
+  }
+}
+@mixin heading3() {
+  font-size: 26px;
+  line-height: 1.2;
+  @include mq("tablet") {
+    font-size: 42px;
+  }
+}
+@mixin heading4() {
+  line-height: 102.5%;
+  font-size: 28px;
+  @include mq("tablet") {
+    font-size: 34px;
+  }
+  @include mq("desktop-small") {
+    font-size: 39px;
+  }
+}
+@mixin heading5() {
+}
+
+@mixin bodyText($size) {
+  font-weight: 300;
+
+  // @if $size == small {
+  //   font-size: 15.28px;
+  //   line-height: 18px;
+  //   letter-spacing: 0.795225px;
+  // }
+  @if $size == normal {
+    font-size: 30px;
+    line-height: 36px;
+    @include mq("tablet") {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+  @if $size == medium {
+    font-size: 16px;
+    line-height: 1.025;
+  }
+  @if $size == "ordinary" {
+    font-size: 16px;
+    line-height: 1.045;
+    @include mq("tablet") {
+      font-size: 24px;
+    }
+  }
+  @if $size == large {
+    font-size: 28px;
+    line-height: 1.025;
+    @include mq("tablet") {
+    }
+  }
+}
+
+@mixin menuEffect($color, $direction: center) {
+  @if ($direction == center) {
+    &::before {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 2px;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      background-color: $color;
+      @extend .transition;
+    }
+  }
+  @if ($direction == "left-to-right") {
+    &::before {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: 0;
+      background-color: $color;
+      @extend .transition;
+    }
+  }
+}
+@mixin cardEffect($color) {
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: $orange;
+    @extend .transition;
+  }
+}
+@mixin hoverEffect($element: text) {
+  @if ($element == text) {
+    &:hover {
+      &::before {
+        width: 100%;
+        transition: all ease-in-out 0.3s;
+      }
+    }
+  }
+  @if ($element == "card") {
+    &:hover {
+      &::before {
+        bottom: 0;
+        @extend .transition;
+      }
+    }
+  }
+}
+
+@mixin card($id) {
+  &[data-id="#{$id}"] {
+    grid-area: card-#{$id};
+  }
+}
