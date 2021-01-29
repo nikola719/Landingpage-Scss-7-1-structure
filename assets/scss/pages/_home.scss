@@ -1,0 +1,300 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the homepage
+// -----------------------------------------------------------------------------
+
+//learn more section
+#learn-more {
+  background-color: $dark;
+  padding: 43px 0;
+  @include mq("tablet") {
+    padding: 33px 0 31px;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    @include mq("phablet") {
+      flex-direction: row;
+    }
+  }
+  .section-image {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 36px;
+    @include mq("phablet") {
+      text-align: right;
+      width: 50%;
+      margin-bottom: 0;
+    }
+    img {
+      max-width: 300px;
+      width: 100%;
+      @include mq("phablet") {
+        max-width: 100%;
+      }
+    }
+  }
+  .section-text-wrapper {
+    width: 100%;
+    max-width: 291px;
+    margin: auto;
+    @include mq("phablet") {
+      width: 45%;
+      max-width: initial;
+      margin: initial;
+    }
+    .section-title {
+      color: $white;
+      margin-bottom: 19px;
+      @include mq("phablet") {
+        margin-bottom: 47px;
+        max-width: 554px;
+      }
+    }
+    .section-desc {
+      color: $orange;
+    }
+    a {
+      position: relative;
+      display: inline-block;
+      padding-right: 15px;
+      @include menuEffect($white);
+      @include hoverEffect();
+      @include arrow();
+    }
+  }
+}
+
+//category section
+.category {
+  background-color: $white;
+  padding: 25px 0 45px;
+  @include mq("tablet") {
+    padding: 62px 0 47px;
+  }
+  .container {
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 39px;
+    column-gap: 40px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "card-1" "card-2" "card-3" "card-4" "card-5" "card-7" "card-6";
+    max-width: 400px;
+    @include mq("tablet-small") {
+      max-width: 1322px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "card-1 card-2"
+        "card-4 card-4"
+        "card-3 card-5"
+        "card-7 card-7"
+        "card-6 .";
+    }
+    @include mq("desktop-small") {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+        "card-1 card-2 card-3"
+        "card-4 card-4 card-5"
+        "card-6 card-7 card-7";
+    }
+  }
+  &-link {
+    position: relative;
+    display: block;
+    height: 100%;
+    padding: 24px 25px;
+    @include mq("desktop-small") {
+      padding: 30px 32px;
+    }
+  }
+  &-card {
+    position: relative;
+    background-color: $gray;
+    border-bottom: 7px solid $orange;
+    height: 280px;
+    overflow: hidden;
+    @include cardEffect($orange);
+    @include hoverEffect("card");
+    @include mq("tablet-small") {
+      height: 300px;
+    }
+    @include mq("desktop-small") {
+      height: 357px;
+    }
+    @for $i from 1 to 8 {
+      @include card($i);
+    }
+    .media-img-container {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 215px;
+      @include mq("tablet-small") {
+        width: 50%;
+        height: initial;
+      }
+    }
+    .media-img {
+      width: 100%;
+      height: 100%;
+      @include mq("tablet-small") {
+        width: 90%;
+        height: 90%;
+      }
+      @include mq("desktop-small") {
+        height: initial;
+      }
+    }
+    &.media {
+      height: initial;
+      @include mq("tablet-small") {
+        height: 300px;
+      }
+      @include mq("desktop-small") {
+        height: 357px;
+      }
+      .category-link {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        @include mq("tablet-small") {
+          flex-direction: row;
+        }
+      }
+      .media-desc {
+        width: 100%;
+        padding: 25px 24px;
+        order: 1;
+        min-height: 220px;
+        @include mq("tablet-small") {
+          width: 50%;
+          padding: 30px 32px;
+          order: 0;
+        }
+      }
+    }
+    &.media-video {
+      background-color: $orange;
+      border: none;
+      .category-name {
+        color: $dark;
+      }
+      .media-desc {
+        width: 100%;
+        @include mq("tablet-small") {
+          width: 48%;
+        }
+      }
+      .media-img-container {
+        width: 100%;
+        .media-img {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          object-fit: cover;
+        }
+        @include mq("tablet-small") {
+          width: 52%;
+        }
+      }
+    }
+    &:hover {
+      .category-name {
+        color: $white;
+        @extend .transition;
+      }
+      .category-title {
+        color: $white;
+        @extend .transition;
+      }
+      &.media {
+        .category-name {
+          color: $white;
+          @extend .transition;
+        }
+        .category-title {
+          color: $white;
+          @extend .transition;
+        }
+      }
+      .start-icon {
+        opacity: 0;
+        @extend .transition;
+      }
+      .start-icon-hover {
+        opacity: 1;
+        @extend .transition;
+      }
+    }
+  }
+  &-title__order {
+    position: absolute;
+    line-height: 0;
+    margin-left: 4px;
+    top: 10px;
+    font-size: 13px;
+    @include mq("tablet-small") {
+      margin-left: 4px;
+      top: 13px;
+      font-size: 17px;
+    }
+  }
+  &-name {
+    color: $orange;
+    margin-bottom: 21px;
+    @extend .transition;
+    @include mq("tablet") {
+      margin-bottom: 26px;
+    }
+  }
+  &-title {
+    position: relative;
+    color: $dark;
+    margin-bottom: 14px;
+    @extend .transition;
+    @include mq("tablet") {
+      margin-bottom: 21px;
+    }
+    &.orange {
+      color: $orange;
+    }
+    &.white {
+      color: $white;
+    }
+  }
+  &-explore {
+    margin: auto;
+    margin-top: 45px;
+    max-width: 534px;
+    text-align: center;
+    @include mq("tablet-small") {
+      margin-top: 92px;
+    }
+    &__title {
+      color: $orange;
+      margin-bottom: 25px;
+      @include mq("tablet-small") {
+        margin-bottom: 12px;
+      }
+    }
+    &__items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      @include mq("tablet-small") {
+        flex-direction: row;
+      }
+    }
+    &__item {
+      position: relative;
+      color: $dark;
+      margin-bottom: 20px;
+      @include menuEffect($orange, "left-to-right");
+      @include hoverEffect();
+    }
+  }
+}

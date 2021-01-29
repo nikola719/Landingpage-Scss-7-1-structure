@@ -1,0 +1,195 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the article page
+// -----------------------------------------------------------------------------
+
+.article {
+  padding: 30px 0 65px;
+  @include mq("phablet") {
+    padding: 47px 0 69px;
+  }
+  &-filter {
+    max-width: 750px;
+    margin: auto;
+    &__title {
+      text-align: center;
+      margin-bottom: 19px;
+      @include mq("tablet") {
+        margin-bottom: 23px;
+      }
+    }
+    &__items {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 53px;
+      @include mq("tablet") {
+        justify-content: space-between;
+        margin-bottom: 90px;
+      }
+    }
+    &__item {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2px 8px 0px 14px;
+      margin-bottom: 10px;
+      @include mq("tablet") {
+        padding: 2px 8px 0px 14px;
+        margin-bottom: 0;
+      }
+      .filter-text {
+        color: $light-gray;
+        font-weight: 500;
+        font-size: 20px;
+        @include mq("tablet") {
+          @include bodyText("large");
+        }
+      }
+      .filter-cancel {
+        font-size: 20px;
+        color: white;
+        margin-left: 3px;
+        opacity: 0;
+        @include mq("tablet") {
+          font-size: 28px;
+        }
+      }
+      &.filtered {
+        background-color: orange;
+        // border: 1px solid orange;
+        border-radius: 22px;
+        .filter-text {
+          color: $white;
+        }
+        .filter-cancel {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &-read {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 350px;
+    margin: auto;
+    margin-bottom: 30px;
+    @include mq("phablet") {
+      margin-bottom: 70px;
+      max-width: initial;
+    }
+    &__container {
+      position: relative;
+      display: flex;
+      border-bottom: 2px solid $orange;
+      align-items: center;
+      width: 100%;
+      order: 1;
+      @include mq("phablet") {
+        width: 56%;
+        order: 0;
+      }
+    }
+    &__desc {
+      margin-bottom: 51px;
+      @include mq("phablet") {
+        margin-bottom: 0;
+      }
+    }
+    &__link {
+      position: relative;
+      display: inline-block;
+      padding-right: 15px;
+      color: $orange;
+      @include menuEffect($orange, "left-to-right");
+      @include hoverEffect();
+      @include arrow();
+      p {
+        font-size: 22px;
+        @include mq("phablet") {
+          font-size: 24px;
+        }
+      }
+    }
+    &__title {
+      max-width: 310px;
+      margin-bottom: 14px;
+      @include mq("tablet") {
+        max-width: 554px;
+        margin-bottom: 46px;
+      }
+    }
+    &__meta {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 9px;
+      justify-content: space-between;
+      display: flex;
+      color: $orange;
+      p {
+        font-size: 14px;
+        @include mq("tablet") {
+          font-size: 16px;
+        }
+      }
+    }
+    &__img {
+      line-height: 0;
+      width: 100%;
+      margin-bottom: 15px;
+      max-height: 220px;
+      @include mq("phablet") {
+        width: 43%;
+        margin-bottom: 0;
+        max-height: initial;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  &-more {
+    text-align: center;
+    padding-top: 15px;
+    &__link {
+      color: $dark;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include bodyText("large");
+      &:hover {
+        color: $orange;
+        .article-more__text {
+          &:not(:first-child) {
+            animation-name: rotate;
+            animation-duration: 0.7s;
+            animation-iteration-count: 1;
+            animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+          }
+        }
+      }
+    }
+    &__text {
+      &:not(:first-child) {
+        font-size: 40px;
+        line-height: 0;
+        margin-left: 5px;
+        transform-origin: center;
+        transition-property: transform;
+      }
+    }
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

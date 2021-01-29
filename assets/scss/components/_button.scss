@@ -1,0 +1,43 @@
+.slick-prev,
+.slick-next {
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+  border: 2px solid $white;
+  background-color: $white;
+  border-radius: 50%;
+  outline: none;
+  &::before {
+    opacity: 0;
+    display: none;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    border-color: #fe9a22 #fe9a22 transparent transparent;
+    border-style: solid;
+    border-width: 2px;
+    transform: rotate(45deg) translate(-50%, -50%);
+    right: 39%;
+    top: 62%;
+    width: 10px;
+    height: 10px;
+  }
+  &:hover {
+    background-color: initial;
+    color: initial;
+  }
+}
+
+.slick-prev {
+  left: 18px;
+  &::after {
+    border-color: transparent transparent #fe9a22 #fe9a22;
+    right: 19%;
+  }
+}
+.slick-next {
+  right: 18px;
+  &::after {
+  }
+}

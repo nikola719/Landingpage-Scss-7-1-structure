@@ -20,10 +20,6 @@
   @include mq("tablet") {
     font-size: 61px;
   }
-  @include mq("phone-wide") {
-  }
-  @include mq("phone") {
-  }
 }
 @mixin heading2() {
   font-size: 28px;
@@ -33,12 +29,6 @@
   }
   @include mq("desktop-small") {
     font-size: 56px;
-  }
-  @include mq("phablet") {
-  }
-  @include mq("phone-wide") {
-  }
-  @include mq("phone") {
   }
 }
 @mixin heading3() {
@@ -132,7 +122,7 @@
     width: 100%;
     height: 100%;
     background-color: $orange;
-    @extend .transition;
+    @extend .cubic-transition;
   }
 }
 @mixin hoverEffect($element: text) {
@@ -148,12 +138,30 @@
     &:hover {
       &::before {
         bottom: 0;
-        @extend .transition;
+        @extend .cubic-transition;
       }
     }
   }
 }
-
+@mixin arrow() {
+  &::after {
+    position: absolute;
+    content: "";
+    border-color: $orange $orange transparent transparent;
+    border-style: solid;
+    border-width: 2px;
+    transform: rotate(45deg);
+    right: 0;
+    top: 28%;
+    width: 7px;
+    height: 7px;
+    @include mq("tablet") {
+      top: 27%;
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
 @mixin card($id) {
   &[data-id="#{$id}"] {
     grid-area: card-#{$id};

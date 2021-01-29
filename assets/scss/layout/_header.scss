@@ -15,13 +15,6 @@
   @include mq("desktop-small") {
     padding: 41px 0;
   }
-  @extend .transition;
-  // &.is-scrolling {
-  //   padding: 25px 0;
-  //   @extend .transition;
-  //   .header-nav {
-  //   }
-  // }
   .container {
     @include mq("tablet") {
     }
@@ -42,6 +35,7 @@
       padding: 90px 22px;
       height: 100vh;
       background: $orange;
+      opacity: 0;
       @extend .cubic-transition;
       @include mq("tablet") {
         position: relative;
@@ -53,16 +47,20 @@
         right: initial;
         height: initial;
         padding: 0;
+        opacity: 1;
       }
       @include mq("desktop-small") {
         display: flex;
       }
     }
     &__wrapper {
-      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 100%;
+      @include mq("tablet") {
+        width: initial;
+      }
     }
     &__logo {
       display: flex;
@@ -157,6 +155,10 @@
     }
   }
   &.active {
+    padding: 0;
+    .container {
+      padding: 0;
+    }
     .header-nav {
       &__logo {
         .pic-svg {
@@ -172,8 +174,14 @@
           @extend .transition;
         }
       }
+      &__wrapper {
+        background-color: $orange;
+        padding: 29px 22px;
+        z-index: $z-header;
+      }
       &__container {
         top: 0;
+        opacity: 1;
         @extend .cubic-transition;
       }
       .menu-item {
