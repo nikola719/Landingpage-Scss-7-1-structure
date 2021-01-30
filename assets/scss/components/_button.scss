@@ -24,7 +24,11 @@
     height: 10px;
   }
   &:hover {
-    background-color: initial;
+    background-color: $white;
+    color: initial;
+  }
+  &:focus {
+    background-color: $white;
     color: initial;
   }
 }

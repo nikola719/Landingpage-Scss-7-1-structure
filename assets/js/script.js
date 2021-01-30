@@ -6,7 +6,7 @@ $(document).ready(function () {
   new WOW().init();
 
   // Hamburger
-  $(".hamburger").click(function () {
+  $(document).on("click", ".hamburger", function () {
     $(this).toggleClass("active");
     $(".header").toggleClass("active");
     if ($(this).hasClass("active")) {
@@ -16,32 +16,70 @@ $(document).ready(function () {
     }
   });
 
+  //viewport check
+  $.fn.isInViewport = function () {
+    if ($(this).length > 0) {
+      let elementTop = $(this).offset().top;
+      let elementBottom = elementTop + $(this).outerHeight();
+
+      let viewportTop = $(window).scrollTop();
+      let viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom;
+    }
+  };
+
   //scroll effect
-  $(window).on("load scroll", function () {
-    let scrollTop = $(window).scrollTop();
-    if (scrollTop > 50) $(".header").addClass("is-scrolling");
-    else $(".header").removeClass("is-scrolling");
+  var lastScrollTop = 0;
+  $(window).scroll(function (event) {
+    var st = $(this).scrollTop();
+    if (st > lastScrollTop && st > $(".header").outerHeight()) {
+      // downscroll code
+      if (!$(".header").hasClass("active")) {
+        $(".header").addClass("is-hidden");
+      }
+    } else {
+      // upscroll code
+      $(".header").removeClass("is-hidden");
+    }
+    if ($(".article-content__statistics").isInViewport()) {
+      $(".article-content__statistics").addClass("active");
+    } else {
+      $(".article-content__statistics").removeClass("active");
+    }
+    lastScrollTop = st;
   });
 
   //filter select
-  $(".article-filter__item").click(function () {
+  $(document).on("click", ".artint-filter__item", function () {
     $(this).addClass("filtered");
   });
-  $(".filter-cancel").click(function (e) {
+  $(document).on("click", ".filter-cancel", function (e) {
     e.stopPropagation();
     $(this).parent().removeClass("filtered");
   });
 
   //podcasts play movie
-  $(".podcast-carousel__details .start img").click(function (e) {
-    e.stopPropagation();
-    $(this).closest(".podcast-carousel__single").addClass("active");
-  });
-  $(".podcast-carousel__single .stop").click(function (e) {
+  $(document).on(
+    "click",
+    ".podcast-carousel__details .start-play",
+    { passive: true },
+    function (e) {
+      console.log("here");
+      $(this)
+        .closest(".podcast-carousel__container")
+        .find(".podcast-carousel__single")
+        .removeClass("active");
+      $(this).closest(".podcast-carousel__single").addClass("active");
+      return false;
+    }
+  );
+  $(document).on("click", ".podcast-carousel__single .stop", function (e) {
     e.stopPropagation();
     $(this).closest(".podcast-carousel__single").removeClass("active");
   });
 
+  //Slick Carousel
   if ($(".podcast-carousel").length) {
     $(".podcast-carousel .podcast-carousel__container").slick({
       arrows: true,
@@ -62,13 +100,13 @@ $(document).ready(function () {
           },
         },
         {
-          breakpoint: 768,
+          breakpoint: 1024,
           settings: {
             slidesToShow: 2,
           },
         },
         {
-          breakpoint: 560,
+          breakpoint: 640,
           settings: {
             slidesToShow: 1,
           },

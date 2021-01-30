@@ -1,0 +1,242 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the Articles page
+// -----------------------------------------------------------------------------
+
+.article {
+  padding: 34px 0 45px;
+  @include mq("tablet") {
+    padding: 120px 0 60px;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &-meta {
+    width: 100%;
+    max-width: 100%;
+    color: $orange;
+    @include mq("tablet") {
+      width: 34.5%;
+      max-width: 180px;
+    }
+    &__date {
+      font-size: 23px;
+      line-height: 1.025;
+      padding-bottom: 13px;
+      border-bottom: 1.5px solid $orange;
+    }
+    &__field {
+      padding: 12px 0 13px;
+      border-bottom: 1.5px solid $orange;
+    }
+    &__share__items {
+      margin-top: 16px;
+      display: flex;
+      margin-bottom: 32px;
+      @include mq("tablet") {
+        margin-bottom: 0;
+      }
+    }
+    &__share__item {
+      padding-right: 13px;
+    }
+  }
+  &-content {
+    width: 100%;
+    font-family: Roboto;
+    @include mq("tablet") {
+      width: 65.5%;
+    }
+    &__title {
+      max-width: 640px;
+      color: $orange;
+      font-weight: 300;
+      margin-bottom: 49px;
+      @include mq("tablet") {
+        margin-bottom: 61px;
+      }
+    }
+    &__wrapper {
+      max-width: 620px;
+      margin-bottom: 45px;
+      p {
+        margin-bottom: 20px;
+      }
+    }
+    &__statistics {
+      font-family: "TT Commons";
+      font-size: 46px;
+      color: $orange;
+      max-width: 620px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      line-height: 0.989;
+      font-weight: 500;
+      margin-bottom: 0;
+      @include mq("tablet") {
+        margin-bottom: 40px;
+      }
+      @include mq("desktop-small") {
+        font-size: 54px;
+        margin-bottom: 40px;
+      }
+      span {
+        position: relative;
+        // border-top: 3px solid orange;
+        padding-top: 15px;
+        padding-bottom: 40px;
+        // border-width: 0;
+        &:first-child {
+          width: 29%;
+          &::before {
+            transition-delay: 0.25s;
+          }
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          width: 0;
+          left: 0;
+          top: 0px;
+          height: 3px;
+          background-color: $orange;
+          transition-delay: 0.5s;
+          opacity: 0;
+          @extend .cubic-transition;
+        }
+      }
+      &.active {
+        span {
+          &::before {
+            width: 100%;
+            opacity: 1;
+          }
+        }
+      }
+    }
+    &__comment {
+      max-width: 640px;
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 0;
+      @include mq("tablet") {
+        margin-left: -24%;
+        justify-content: space-between;
+      }
+      img {
+        margin-top: 10px;
+        margin-right: 20px;
+        width: 26px;
+        height: 26px;
+        @include mq("tablet") {
+          width: 47px;
+          height: 47px;
+        }
+      }
+      h5 {
+        max-width: 550px;
+      }
+    }
+    &__related {
+      max-width: 620px;
+      display: flex;
+      justify-content: space-between;
+      font-family: TT Commons;
+      flex-direction: column;
+      @include mq("phone") {
+        flex-direction: row;
+      }
+      p {
+        line-height: 1.025;
+      }
+      a {
+        color: $orange;
+        display: inline-block;
+        padding-bottom: 13px;
+      }
+    }
+    &__media {
+      display: flex;
+      flex-direction: column;
+      font-family: TT Commons;
+      line-height: 1.045;
+      font-size: 28px;
+      text-align: center;
+      padding-bottom: 0;
+      @include mq("tablet") {
+        flex-direction: row;
+        font-size: 24px;
+        text-align: left;
+        padding-bottom: 60px;
+      }
+      .media-item {
+        margin-right: 0;
+        margin-bottom: 20px;
+        @include mq("tablet") {
+          margin-right: 33px;
+          margin-bottom: 0;
+        }
+        a {
+          color: $dark;
+        }
+      }
+    }
+    &__prev {
+      order: 1;
+      margin-top: 10px;
+      @include mq("phone") {
+        order: 0;
+        margin-top: 60px;
+      }
+      h5 {
+        position: relative;
+        padding-left: 15px;
+        @include p-arrow();
+        @include p-arrowEffect();
+      }
+    }
+    &__next {
+      text-align: right;
+      margin-top: 0;
+      @include mq("phone") {
+        order: 0;
+        margin-top: 60px;
+      }
+      h5 {
+        position: relative;
+        padding-right: 15px;
+        @include p-arrow("right");
+        @include p-arrowEffect("right");
+      }
+    }
+  }
+  &-featured__image {
+    margin-bottom: 43px;
+  }
+  &.vi-page {
+    padding: 34px 0 42px;
+    @include mq("tablet") {
+      padding: 75px 0 60px;
+    }
+    .article-meta {
+      display: none;
+      @include mq("desktop-small") {
+        display: block;
+        width: 34.5%;
+      }
+    }
+    .article-content {
+      width: 100%;
+      @include mq("tablet") {
+        margin: auto;
+        width: 65.5%;
+      }
+      @include mq("desktop-small") {
+        margin: initial;
+      }
+    }
+  }
+}

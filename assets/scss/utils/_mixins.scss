@@ -39,8 +39,8 @@
   }
 }
 @mixin heading4() {
-  line-height: 102.5%;
   font-size: 28px;
+  line-height: 102.5%;
   @include mq("tablet") {
     font-size: 34px;
   }
@@ -48,17 +48,34 @@
     font-size: 39px;
   }
 }
-@mixin heading5() {
+@mixin heading5($size: normal) {
+  @if ($size == medium) {
+    font-size: 26px;
+    line-height: 1.025;
+    @include mq("tablet") {
+      font-size: 28px;
+    }
+  }
+  @if ($size == normal) {
+    font-size: 20px;
+    line-height: 1.315;
+    @include mq("tablet") {
+      font-size: 28px;
+    }
+  }
 }
 
 @mixin bodyText($size) {
   font-weight: 300;
 
-  // @if $size == small {
-  //   font-size: 15.28px;
-  //   line-height: 18px;
-  //   letter-spacing: 0.795225px;
-  // }
+  @if $size == small {
+    font-size: 16px;
+    line-height: 1.405;
+    letter-spacing: 0.015em;
+    @include mq("tablet") {
+      font-size: 18px;
+    }
+  }
   @if $size == normal {
     font-size: 30px;
     line-height: 36px;
@@ -107,6 +124,18 @@
       width: 0;
       height: 2px;
       left: 0;
+      bottom: 0;
+      background-color: $color;
+      @extend .transition;
+    }
+  }
+  @if ($direction == "right-to-left") {
+    &::before {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 2px;
+      right: 0;
       bottom: 0;
       background-color: $color;
       @extend .transition;
@@ -165,5 +194,45 @@
 @mixin card($id) {
   &[data-id="#{$id}"] {
     grid-area: card-#{$id};
+  }
+}
+@mixin p-arrow($dir: left) {
+  &::after {
+    position: absolute;
+    content: "";
+    border-style: solid;
+    border-width: 2px;
+    transform: rotate(45deg) translateY(-50%);
+    @if ($dir == "right") {
+      right: 0px;
+      border-color: $orange $orange transparent transparent;
+    }
+    @if ($dir == "left") {
+      border-color: transparent transparent $orange $orange;
+      left: -7px;
+    }
+    top: 40%;
+    width: 7px;
+    height: 7px;
+    transition: all ease-in-out 0.3s;
+    @include mq("tablet") {
+      top: 38%;
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+@mixin p-arrowEffect($dir: left) {
+  &:hover {
+    &::after {
+      @if ($dir == "right") {
+        right: -10px;
+        transition: all ease-in-out 0.3s;
+      }
+      @if ($dir == "left") {
+        left: -17px;
+        transition: all ease-in-out 0.3s;
+      }
+    }
   }
 }
