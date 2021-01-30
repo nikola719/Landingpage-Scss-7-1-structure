@@ -77,7 +77,7 @@ br {
   .section-title {
     max-width: 254px;
     margin-right: auto;
-    @include mq("tablet") {
+    @include mq("phone") {
       max-width: 660px;
     }
   }

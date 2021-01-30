@@ -184,6 +184,17 @@
         }
       }
     }
+    &__contact {
+      font-family: TT Commons;
+      a {
+        position: relative;
+        display: inline-block;
+        color: $orange;
+        padding-right: 10px;
+        @include p-arrow("right");
+        @include p-arrowEffect("right");
+      }
+    }
     &__prev {
       order: 1;
       margin-top: 10px;
@@ -236,6 +247,55 @@
       }
       @include mq("desktop-small") {
         margin: initial;
+      }
+    }
+  }
+  &.about {
+    .article-meta {
+      max-width: 100%;
+      .about-img__wrapper {
+        width: 186px;
+        height: 186px;
+        margin: auto;
+        margin-bottom: 34px;
+        @include mq("tablet") {
+          width: 210px;
+          height: 210px;
+          margin: initial;
+          margin-bottom: 0;
+        }
+        @include mq("desktop-small") {
+          width: 325px;
+          height: 325px;
+        }
+      }
+    }
+    .article-content {
+      &__reasons {
+        max-width: 580px;
+        margin-bottom: 24px;
+        @include mq("tablet") {
+          margin-bottom: 140px;
+        }
+        &-item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 34px;
+          @include mq("tablet") {
+            align-items: center;
+            margin-bottom: 53px;
+          }
+          img {
+            width: 62px;
+            height: 51px;
+            margin-right: 24px;
+            @include mq("tablet") {
+              width: 68px;
+              height: 57px;
+              margin-right: 35.6px;
+            }
+          }
+        }
       }
     }
   }
