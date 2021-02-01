@@ -415,7 +415,7 @@ br {
   }
 }
 
-//Video Section
+//Video section
 .movie {
   background-color: $dark;
   padding: 43px 0;
@@ -424,5 +424,61 @@ br {
   }
   video {
     width: 100%;
+  }
+}
+
+//Error section
+.error {
+  background-color: $orange;
+  height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+  @include mq("tablet") {
+    height: calc(100vh - 109px);
+  }
+  @include mq("desktop-small") {
+    height: calc(100vh - 132px);
+  }
+  &-wrapper {
+    text-align: center;
+  }
+  &-title {
+    color: $white;
+    font-size: 160px;
+    @include mq("tablet") {
+      font-size: 240px;
+    }
+    @include mq("desktop-small") {
+      font-size: 321px;
+    }
+  }
+  &-subtitle {
+    font-size: 35px;
+    line-height: 1.196;
+    color: $white;
+    margin-bottom: 40px;
+    max-width: 264px;
+    @include mq("phone") {
+      max-width: initial;
+    }
+    @include mq("tablet") {
+      font-size: 51px;
+    }
+  }
+  &-redirect {
+    display: inline-block;
+    color: $dark;
+    position: relative;
+    padding-right: 20px;
+    @include p-arrow("right", $dark);
+    @include hoverEffect();
+    @include menuEffect($white, "left-to-right");
+    p {
+      line-height: 1.045;
+      font-size: 26px;
+      @include mq("tablet") {
+        font-size: 24px;
+      }
+    }
   }
 }

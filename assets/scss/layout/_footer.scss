@@ -51,8 +51,11 @@
     color: $white;
     .menu-item {
       a {
+        position: relative;
         color: $white;
         font-size: 12px;
+        @include menuEffect($white);
+        @include hoverEffect();
         @include mq("phone") {
           font-size: 14px;
         }
@@ -84,6 +87,11 @@
     display: flex;
     .menu-item {
       padding-left: 12px;
+      @extend .transition;
+      &:hover {
+        transform: scale(1.2);
+        @extend .transition;
+      }
     }
   }
 }

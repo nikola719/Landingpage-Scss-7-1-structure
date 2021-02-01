@@ -49,10 +49,16 @@
       width: 65.5%;
     }
     &__title {
-      max-width: 640px;
       color: $orange;
       font-weight: 300;
-      margin-bottom: 49px;
+      max-width: 254px;
+      margin-bottom: 30px;
+      @include mq("phone-small") {
+        max-width: 640px;
+      }
+      @include mq("phone") {
+        margin-bottom: 49px;
+      }
       @include mq("tablet") {
         margin-bottom: 61px;
       }
@@ -296,6 +302,20 @@
             }
           }
         }
+      }
+    }
+  }
+  &.contacts {
+    .article-meta {
+      display: none;
+      @include mq("desktop-small") {
+        display: block;
+      }
+    }
+    .article-content {
+      margin: auto;
+      @include mq("desktop-small") {
+        margin: initial;
       }
     }
   }

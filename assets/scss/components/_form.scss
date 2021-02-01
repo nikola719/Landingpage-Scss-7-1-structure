@@ -1,0 +1,37 @@
+.contact-form {
+  max-width: 620px;
+}
+.form-group {
+  margin-bottom: 30px;
+  @include mq("tablet") {
+    margin-bottom: 44px;
+  }
+}
+input,
+textarea {
+  width: 100%;
+  font-family: TT Commons;
+  padding-bottom: 12px;
+  color: $dark-gray;
+  border-width: 0 0 1px 0;
+  resize: none;
+  border-color: $light-gray;
+  @include heading5("medium");
+  &::placeholder {
+    color: $light-gray;
+  }
+  @include mq("tablet") {
+    font-size: 28px;
+  }
+}
+.btn-submit {
+  background-color: transparent;
+  color: $light-gray;
+  border-radius: 40px;
+  border: 1px solid $light-gray;
+  padding: 7px 37px;
+  @include heading5("medium");
+  @include mq("tablet") {
+    padding: 13px 58px;
+  }
+}

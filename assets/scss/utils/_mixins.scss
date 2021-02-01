@@ -196,7 +196,7 @@
     grid-area: card-#{$id};
   }
 }
-@mixin p-arrow($dir: left) {
+@mixin p-arrow($dir: left, $color: $orange) {
   &::after {
     position: absolute;
     content: "";
@@ -205,10 +205,10 @@
     transform: rotate(45deg) translateY(-50%);
     @if ($dir == "right") {
       right: 0px;
-      border-color: $orange $orange transparent transparent;
+      border-color: $color $color transparent transparent;
     }
     @if ($dir == "left") {
-      border-color: transparent transparent $orange $orange;
+      border-color: transparent transparent $color $color;
       left: -7px;
     }
     top: 40%;
