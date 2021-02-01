@@ -76,7 +76,7 @@ $(document).ready(function () {
       $(this).closest(".podcast-carousel__single").addClass("active");
       if ($(".movie-youtube")) {
         const timestamp = $(this).parent().attr("timestamp");
-        let new_youtube = old_youtube + "?t=" + timestamp + "?autoplay=1";
+        let new_youtube = old_youtube + "?t=" + timestamp + "&autoplay=1";
         $(".movie-youtube").attr("src", new_youtube);
       }
       return false;
