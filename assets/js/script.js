@@ -1,11 +1,15 @@
 /**
  * This is script for index page
  */
+let old_youtube;
+$(window).on("load", function () {
+  if ($(".movie-youtube")) {
+    old_youtube = $(".movie-youtube").attr("src");
+  }
+});
 $(document).ready(function () {
   // Wow init
   new WOW().init();
-
-  // Hamburger
   $(document).on("click", ".hamburger", function () {
     $(this).toggleClass("active");
     $(".header").toggleClass("active");
@@ -65,18 +69,26 @@ $(document).ready(function () {
     ".podcast-carousel__details .start-play",
     { passive: true },
     function (e) {
-      console.log("here");
       $(this)
         .closest(".podcast-carousel__container")
         .find(".podcast-carousel__single")
         .removeClass("active");
       $(this).closest(".podcast-carousel__single").addClass("active");
+      if ($(".movie-youtube")) {
+        const timestamp = $(this).parent().attr("timestamp");
+        let new_youtube = old_youtube + "?" + timestamp + "?autoplay=1";
+        $(".movie-youtube").attr("src", new_youtube);
+      }
       return false;
     }
   );
   $(document).on("click", ".podcast-carousel__single .stop", function (e) {
     e.stopPropagation();
     $(this).closest(".podcast-carousel__single").removeClass("active");
+    if ($(".movie-youtube")) {
+      $(".movie-youtube").attr("src", "");
+      $(".movie-youtube").attr("src", old_youtube);
+    }
   });
 
   //Slick Carousel

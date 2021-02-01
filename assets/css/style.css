@@ -899,8 +899,7 @@ br {
   .movie video {
     width: 100%; }
   .movie iframe {
-    width: 100%;
-    height: auto; }
+    width: 100%; }
 
 .error {
   background-color: #fe9a22;
