@@ -898,6 +898,9 @@ br {
       padding: 74px 0 69px; } }
   .movie video {
     width: 100%; }
+  .movie iframe {
+    width: 100%;
+    height: auto; }
 
 .error {
   background-color: #fe9a22;
