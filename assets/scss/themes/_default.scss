@@ -16,12 +16,6 @@ main {
   padding: 0 22px;
   margin: 0 auto;
 }
-.text-underline {
-  position: relative;
-  text-decoration: underline;
-  text-decoration-color: $white;
-  text-decoration-skip-ink: none;
-}
 br {
   display: none;
   @include mq("tablet") {
@@ -77,6 +71,12 @@ br {
   .section-title {
     max-width: 254px;
     margin-right: auto;
+    span {
+      position: relative;
+      text-decoration: underline;
+      text-decoration-color: $white;
+      text-decoration-skip-ink: none;
+    }
     @include mq("phone") {
       max-width: 660px;
     }
