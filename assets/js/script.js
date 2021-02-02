@@ -167,7 +167,7 @@ $(document).ready(function () {
     var increment = 10 / duration;
     var percent = Math.min(increment * currentTime * 10, 100);
     $(".progress").css("width", percent + "%");
-    $(".cursor").css("transform", "translate(" + percent + "%, -50%)");
+    $(".cursor").css("left", percent + "%");
   });
 
   //podcast end

@@ -2019,11 +2019,12 @@ br {
       .article-meta__player .cursor {
         position: absolute;
         top: 50%;
+        left: 0;
         width: 12px;
         height: 12px;
         background-color: #302d2b;
-        -webkit-transform: translate(0, -50%);
-                transform: translate(0, -50%);
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
         -webkit-transition: width 0.1s linear;
         transition: width 0.1s linear; }
       .article-meta__player.active .meta-play {
