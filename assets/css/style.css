@@ -44,7 +44,7 @@ ul {
   padding-left: 0;
   list-style: none; }
 
-.transition, .header, .header-nav__logo .pic-svg svg, .header-nav__logo span, .header-nav .menu-item, .header-nav .menu-item a::before, .header-nav-social__item, .header-nav-social__item:hover, .header.active .header-nav__logo .pic-svg svg path, .header.active .header-nav__logo span, .header.active .header-nav .menu-item, .header.is-hidden, .footer-menu__items .menu-item a::before, .footer-social__items .menu-item, .footer-social__items .menu-item:hover, .start-icon, .start-icon-hover, .podcast-media__item::before, .podcast.vi-page .podcast-carousel__single p, .podcast.vi-page .podcast-carousel__single.active .abstraction p, .action-call__link::before, .error-redirect::before, .learn-more .section-text-wrapper a::before, .category-card:hover .category-name, .category-card:hover .category-title, .category-card:hover.media .category-name, .category-card:hover.media .category-title, .category-card:hover .start-icon, .category-card:hover .start-icon-hover, .category-name, .category-title, .category-explore__item::before, .artint-read__link::before, .episode__link::before, .episode-img__container:hover .start-icon, .episode-img__container:hover .start-icon-hover, .episode-img__container.active .start-icon, .episode-img__container.active .start-icon-hover, .episode-img__container.active .stop-icon, .episode-img__container.active:hover .stop-icon, .article-meta__player .meta-play, .article-meta__player .meta-stop, .article-meta__player.active .meta-play, .article-meta__player.active .meta-stop, .article-content__media .media-item a::before {
+.transition, .header, .header-nav__logo .pic-svg svg, .header-nav__logo span, .header-nav .menu-item, .header-nav .menu-item a::before, .header-nav-social__item, .header-nav-social__item:hover, .header.active .header-nav__logo .pic-svg svg path, .header.active .header-nav__logo span, .header.active .header-nav .menu-item, .header.is-hidden, .footer-menu__items .menu-item a::before, .footer-social__items .menu-item, .footer-social__items .menu-item:hover, .start-icon, .start-icon-hover, .podcast-media__item::before, .podcast.vi-page .podcast-carousel__single p, .podcast.vi-page .podcast-carousel__single.active .abstraction p, .action-call__link::before, .error-redirect::before, .learn-more .section-text-wrapper a::before, .category-card:hover .category-name, .category-card:hover .category-title, .category-card:hover.media .category-name, .category-card:hover.media .category-title, .category-card:hover .start-icon, .category-card:hover .start-icon-hover, .category-name, .category-title, .category-explore__item::before, .artint-filter__item, .artint-filter__item .filter-text, .artint-filter__item .filter-cancel, .artint-filter__item.filtered, .artint-filter__item.filtered .filter-text, .artint-filter__item.filtered .filter-cancel, .artint-read__link::before, .episode__link::before, .episode-img__container:hover .start-icon, .episode-img__container:hover .start-icon-hover, .episode-img__container.active .start-icon, .episode-img__container.active .start-icon-hover, .episode-img__container.active .stop-icon, .episode-img__container.active:hover .stop-icon, .article-meta__player .meta-play, .article-meta__player .meta-stop, .article-meta__player.active .meta-play, .article-meta__player.active .meta-stop, .article-content__media .media-item a::before {
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s; }
 
@@ -1613,9 +1613,13 @@ br {
         background-color: orange;
         border-radius: 22px; }
         .artint-filter__item.filtered .filter-text {
-          color: #ffffff; }
+          color: #ffffff;
+          -webkit-transition-delay: 0.2s;
+                  transition-delay: 0.2s; }
         .artint-filter__item.filtered .filter-cancel {
-          opacity: 1; }
+          opacity: 1;
+          -webkit-transition-delay: 0.4s;
+                  transition-delay: 0.4s; }
   .artint-read {
     display: -webkit-box;
     display: -ms-flexbox;

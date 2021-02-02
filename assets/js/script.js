@@ -140,6 +140,10 @@ $(document).ready(function () {
       pod_playing = false;
     }
   });
+  //podcast end
+  $(".episode-featured__podcast").on("ended", function () {
+    $(this).closest(".episode-img__container").removeClass("active");
+  });
 
   // play and pause podcast upon click event in single podcast page
   $("body").on("click", ".meta-play", function (e) {
@@ -166,8 +170,14 @@ $(document).ready(function () {
     var duration = $(this).get(0).duration;
     var increment = 10 / duration;
     var percent = Math.min(increment * currentTime * 10, 100);
-    $(".progress").css("width", percent + "%");
-    $(".cursor").css("left", percent + "%");
+    $(this)
+      .closest(".article-meta")
+      .find(".progress")
+      .css("width", percent + "%");
+    $(this)
+      .closest(".article-meta")
+      .find(".cursor")
+      .css("left", percent + "%");
   });
 
   //podcast end
@@ -176,6 +186,8 @@ $(document).ready(function () {
       .closest(".article-meta")
       .find(".article-meta__player")
       .removeClass("active");
+    $(this).closest(".article-meta").find(".progress").css("width", 0);
+    $(this).closest(".article-meta").find(".cursor").css("left", 0);
   });
 
   //Slick Carousel
