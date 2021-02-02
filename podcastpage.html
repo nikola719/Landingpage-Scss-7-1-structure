@@ -103,7 +103,7 @@
     <!-- Begin Page Content -->
     <main>
       <!-- Begin Hero Section -->
-      <section class="section" id="hero">
+      <section class="hero">
         <div class="container">
           <h1 class="section-title">
             <span>Episode 14</span>
@@ -115,7 +115,31 @@
       <!-- Begin Video Article Section -->
       <section class="article pod-page">
         <div class="container">
-          <div class="article-meta"></div>
+          <div class="article-meta">
+            <div class="article-meta__player">
+              <img
+                src="assets/images/podcast-background.png"
+                alt="podcast-background"
+              />
+              <img
+                class="meta-play"
+                src="assets/images/pod-play.png"
+                alt="play"
+              />
+              <img
+                class="meta-stop"
+                src="assets/images/pod-stop.png"
+                alt="stop"
+              />
+              <div class="progress-container">
+                <div class="progress"></div>
+                <div class="cursor"></div>
+              </div>
+            </div>
+            <audio>
+              <source src="assets/audios/test.mp3" type="audio/mpeg" />
+            </audio>
+          </div>
           <div class="article-content">
             <h5 class="article-content__title">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac

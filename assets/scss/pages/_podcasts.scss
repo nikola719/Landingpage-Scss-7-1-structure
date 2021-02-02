@@ -111,5 +111,25 @@
         @extend .transition;
       }
     }
+    &.active {
+      .start-icon {
+        opacity: 0;
+        @extend .transition;
+      }
+      .start-icon-hover {
+        opacity: 0;
+        @extend .transition;
+      }
+      .stop-icon {
+        opacity: 1;
+        @extend .transition;
+      }
+      &:hover {
+        .stop-icon {
+          transform: translate(-50%, -50%) scale(1.2);
+          @extend .transition;
+        }
+      }
+    }
   }
 }

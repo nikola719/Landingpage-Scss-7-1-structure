@@ -46,18 +46,29 @@ br {
     top: 0;
     left: 0;
   }
+  .stop-icon {
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transform-origin: center center;
+  }
 }
 .start-icon {
   opacity: 1;
   @extend .transition;
 }
+
 .start-icon-hover {
   opacity: 0;
   @extend .transition;
 }
 
 //Hero section
-#hero {
+.hero {
   background-color: $orange;
   min-height: 194px;
   display: flex;
@@ -84,7 +95,7 @@ br {
 }
 
 //Introduction section
-#introduction {
+.introduction {
   background: $dark;
   padding: 47px 0 50px;
   @include mq("tablet") {
@@ -484,6 +495,61 @@ br {
       @include mq("tablet") {
         font-size: 24px;
       }
+    }
+  }
+}
+
+//cookie section
+.cookie {
+  background: $dark;
+  padding: 23px 0 40px;
+  text-align: center;
+  @include mq("tablet") {
+    padding: 37px 70px;
+  }
+  .container {
+    max-width: 752px;
+    margin: auto;
+  }
+  &-title {
+    color: $white;
+    margin-bottom: 11px;
+    @include mq("tablet-small") {
+      margin-bottom: 18px;
+    }
+  }
+  &-content {
+    font-family: Roboto;
+    line-height: 1.365;
+    font-size: 12px;
+    letter-spacing: 0.015em;
+    color: $white;
+    margin-bottom: 20px;
+    @include mq("tablet-small") {
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+  }
+  &-btn__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 277px;
+    margin: auto;
+  }
+  &-btn {
+    font-family: "TT COMMONS";
+    line-height: 1.025;
+    background: transparent;
+    border: 2px solid $white;
+    width: 111px;
+    padding: 6px 0 4px 0;
+    color: $white;
+    border-radius: 32px;
+    font: 19px;
+    @include mq("tablet") {
+      font-size: 22px;
+      padding: 7px 0 2px 0;
     }
   }
 }

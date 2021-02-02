@@ -7,7 +7,10 @@ $(window).on("load", function () {
     old_youtube = $(".movie-youtube").attr("src");
   }
 });
+
 $(document).ready(function () {
+  var pod_playing = false;
+  var carousel_playing = false;
   // Wow init
   new WOW().init();
   $(document).on("click", ".hamburger", function () {
@@ -63,25 +66,47 @@ $(document).ready(function () {
     $(this).parent().removeClass("filtered");
   });
 
-  //podcasts play movie
+  //playing podcast in carousel
   $(document).on(
     "click",
     ".podcast-carousel__details .start-play",
     { passive: true },
     function (e) {
+      // switch the screen
       $(this)
         .closest(".podcast-carousel__container")
         .find(".podcast-carousel__single")
         .removeClass("active");
       $(this).closest(".podcast-carousel__single").addClass("active");
+      //youtube autoplay according to play button click event
       if ($(".movie-youtube")) {
         const timestamp = $(this).parent().attr("timestamp");
         let new_youtube = old_youtube + "?t=" + timestamp + "&autoplay=1";
         $(".movie-youtube").attr("src", new_youtube);
       }
-      return false;
+      //podcast play
+      if (
+        $(this).closest(".podcast-carousel__single").find("audio").length > 0
+      ) {
+        $(this)
+          .closest(".podcast-carousel__container")
+          .find("audio")
+          .each(function () {
+            $(this).get(0).pause();
+            carousel_playing = false;
+          });
+
+        $(this)
+          .closest(".podcast-carousel__single")
+          .find(".image-wrapper audio")
+          .get(0)
+          .play();
+        carousel_playing = true;
+      }
     }
   );
+
+  //stop playing podcast in carousel
   $(document).on("click", ".podcast-carousel__single .stop", function (e) {
     e.stopPropagation();
     $(this).closest(".podcast-carousel__single").removeClass("active");
@@ -89,14 +114,74 @@ $(document).ready(function () {
       $(".movie-youtube").attr("src", "");
       $(".movie-youtube").attr("src", old_youtube);
     }
+    $(this)
+      .closest(".podcast-carousel__single")
+      .find(".image-wrapper audio")
+      .get(0)
+      .pause();
+    carousel_playing = false;
+  });
+  $(".podcast-carousel__container audio").each(function () {
+    $(this).on("ended", function () {
+      carousel_playing = false;
+      $(this).closest(".podcast-carousel__single").removeClass("active");
+    });
+  });
+
+  //play podcast upon click event in video-podcast page
+  $(document).on("click", ".episode-img__container", function (e) {
+    e.stopPropagation();
+    $(this).toggleClass("active");
+    if (pod_playing == false) {
+      $(".episode-featured__podcast").get(0).play();
+      pod_playing = true;
+    } else {
+      $(".episode-featured__podcast").get(0).pause();
+      pod_playing = false;
+    }
+  });
+
+  // play and pause podcast upon click event in single podcast page
+  $("body").on("click", ".meta-play", function (e) {
+    e.stopPropagation();
+    $(this)
+      .closest(".article-meta")
+      .find(".article-meta__player")
+      .addClass("active");
+    $(this).closest(".article-meta").find("audio").get(0).play();
+  });
+
+  $("body").on("click", ".meta-stop", function (e) {
+    e.stopPropagation();
+    $(this)
+      .closest(".article-meta")
+      .find(".article-meta__player")
+      .removeClass("active");
+    $(this).closest(".article-meta").find("audio").get(0).pause();
+  });
+
+  //progressbar customization
+  $(".article-meta audio").bind("timeupdate", function () {
+    var currentTime = $(this).get(0).currentTime;
+    var duration = $(this).get(0).duration;
+    var increment = 10 / duration;
+    var percent = Math.min(increment * currentTime * 10, 100);
+    $(".progress").css("width", percent + "%");
+    $(".cursor").css("transform", "translate(" + percent + "%, -50%)");
+  });
+
+  //podcast end
+  $(".article-meta audio").on("ended", function () {
+    $(this)
+      .closest(".article-meta")
+      .find(".article-meta__player")
+      .removeClass("active");
   });
 
   //Slick Carousel
   if ($(".podcast-carousel").length) {
     $(".podcast-carousel .podcast-carousel__container").slick({
       arrows: true,
-      // dots: true,
-      // speed: 1500,
       cssEase: "ease",
       easing: "linear",
       autoplay: false,
