@@ -149,6 +149,7 @@ br {
       flex-direction: column;
       max-width: 300px;
       margin: auto;
+      align-items: center;
       @include mq("phone") {
         flex-direction: row;
       }
