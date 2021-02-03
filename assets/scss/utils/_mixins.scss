@@ -204,7 +204,10 @@
     border-width: 2px;
     transform: rotate(45deg) translateY(-50%);
     @if ($dir == "right") {
-      right: 0px;
+      @include mq("desktop-small") {
+        right: 0px;
+      }
+      right: 5px;
       border-color: $color $color transparent transparent;
     }
     @if ($dir == "left") {

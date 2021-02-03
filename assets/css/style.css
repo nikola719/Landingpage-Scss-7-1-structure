@@ -1092,7 +1092,8 @@ br {
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  min-height: 320px; }
   @media only screen and (min-width: 768px) {
     .error {
       height: calc(100vh - 109px); } }
@@ -1134,13 +1135,16 @@ br {
       border-width: 2px;
       -webkit-transform: rotate(45deg) translateY(-50%);
               transform: rotate(45deg) translateY(-50%);
-      right: 0px;
+      right: 5px;
       border-color: #302d2b #302d2b transparent transparent;
       top: 40%;
       width: 7px;
       height: 7px;
       -webkit-transition: all ease-in-out 0.3s;
       transition: all ease-in-out 0.3s; }
+      @media only screen and (min-width: 1024px) {
+        .error-redirect::after {
+          right: 0px; } }
       @media only screen and (min-width: 768px) {
         .error-redirect::after {
           top: 38%;
@@ -2097,19 +2101,26 @@ br {
       color: #fe9a22;
       font-weight: 300;
       max-width: 254px;
-      margin-bottom: 30px; }
+      padding-bottom: 30px;
+      margin: auto; }
       @media only screen and (min-width: 375px) {
         .article-content__title {
           max-width: 640px; } }
       @media only screen and (min-width: 425px) {
         .article-content__title {
-          margin-bottom: 49px; } }
+          padding-bottom: 49px; } }
       @media only screen and (min-width: 768px) {
         .article-content__title {
-          margin-bottom: 61px; } }
+          margin: initial;
+          padding-bottom: 61px; } }
     .article-content__wrapper {
-      max-width: 620px;
-      margin-bottom: 45px; }
+      max-width: 640px;
+      padding-bottom: 45px;
+      margin: auto; }
+      @media only screen and (min-width: 768px) {
+        .article-content__wrapper {
+          max-width: 620px;
+          margin: initial; } }
       .article-content__wrapper p {
         margin-bottom: 20px; }
     .article-content__statistics {
@@ -2199,7 +2210,8 @@ br {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
-              flex-direction: column; }
+              flex-direction: column;
+      margin: auto; }
       @media only screen and (min-width: 425px) {
         .article-content__related {
           -webkit-box-orient: horizontal;
@@ -2272,13 +2284,16 @@ br {
           border-width: 2px;
           -webkit-transform: rotate(45deg) translateY(-50%);
                   transform: rotate(45deg) translateY(-50%);
-          right: 0px;
+          right: 5px;
           border-color: #fe9a22 #fe9a22 transparent transparent;
           top: 40%;
           width: 7px;
           height: 7px;
           -webkit-transition: all ease-in-out 0.3s;
           transition: all ease-in-out 0.3s; }
+          @media only screen and (min-width: 1024px) {
+            .article-content__contact a::after {
+              right: 0px; } }
           @media only screen and (min-width: 768px) {
             .article-content__contact a::after {
               top: 38%;
@@ -2301,7 +2316,10 @@ br {
           margin-top: 60px; } }
       .article-content__prev h5 {
         position: relative;
-        padding-left: 15px; }
+        padding-left: 10px; }
+        @media only screen and (min-width: 1024px) {
+          .article-content__prev h5 {
+            padding-left: 15px; } }
         .article-content__prev h5::after {
           position: absolute;
           content: "";
@@ -2344,13 +2362,16 @@ br {
           border-width: 2px;
           -webkit-transform: rotate(45deg) translateY(-50%);
                   transform: rotate(45deg) translateY(-50%);
-          right: 0px;
+          right: 5px;
           border-color: #fe9a22 #fe9a22 transparent transparent;
           top: 40%;
           width: 7px;
           height: 7px;
           -webkit-transition: all ease-in-out 0.3s;
           transition: all ease-in-out 0.3s; }
+          @media only screen and (min-width: 1024px) {
+            .article-content__next h5::after {
+              right: 0px; } }
           @media only screen and (min-width: 768px) {
             .article-content__next h5::after {
               top: 38%;

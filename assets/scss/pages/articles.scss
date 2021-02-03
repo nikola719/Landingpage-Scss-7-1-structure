@@ -133,20 +133,27 @@
       color: $orange;
       font-weight: 300;
       max-width: 254px;
-      margin-bottom: 30px;
+      padding-bottom: 30px;
+      margin: auto;
       @include mq("phone-small") {
         max-width: 640px;
       }
       @include mq("phone") {
-        margin-bottom: 49px;
+        padding-bottom: 49px;
       }
       @include mq("tablet") {
-        margin-bottom: 61px;
+        margin: initial;
+        padding-bottom: 61px;
       }
     }
     &__wrapper {
-      max-width: 620px;
-      margin-bottom: 45px;
+      max-width: 640px;
+      padding-bottom: 45px;
+      margin: auto;
+      @include mq("tablet") {
+        max-width: 620px;
+        margin: initial;
+      }
       p {
         margin-bottom: 20px;
       }
@@ -233,6 +240,7 @@
       justify-content: space-between;
       font-family: TT Commons;
       flex-direction: column;
+      margin: auto;
       @include mq("phone") {
         flex-direction: row;
       }
@@ -294,7 +302,10 @@
       }
       h5 {
         position: relative;
-        padding-left: 15px;
+        padding-left: 10px;
+        @include mq("desktop-small") {
+          padding-left: 15px;
+        }
         @include p-arrow();
         @include p-arrowEffect();
       }
