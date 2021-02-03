@@ -99,7 +99,7 @@
     //   "card-6 card-7 card-7";
     // }
     @include mq("desktop", max) {
-      column-gap: 20px;
+      grid-column-gap: 20px;
     }
     @include mq("desktop-small", max) {
       grid-template-columns: repeat(2, 1fr);
@@ -109,7 +109,7 @@
         "card-3 card-5"
         "card-7 card-7"
         "card-6 .";
-      column-gap: 30px;
+      grid-column-gap: 30px;
     }
     @include mq("tablet-small", max) {
       grid-template-columns: repeat(1, 1fr);
@@ -118,8 +118,8 @@
     }
     display: grid;
     grid-template-rows: auto;
-    row-gap: 39px;
-    column-gap: 40px;
+    grid-row-gap: 39px;
+    grid-column-gap: 40px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
       "card-1 card-2 card-3"
