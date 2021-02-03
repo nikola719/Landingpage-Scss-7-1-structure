@@ -1,5 +1,10 @@
 .contact-form {
-  max-width: 620px;
+  max-width: 640px;
+  margin: auto;
+  @include mq("tablet") {
+    max-width: 620px;
+    margin: initial;
+  }
 }
 .form-group {
   margin-bottom: 30px;

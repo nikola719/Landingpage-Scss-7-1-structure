@@ -14,11 +14,13 @@
   }
   &-meta {
     width: 100%;
-    max-width: 100%;
+    max-width: 640px;
+    margin: auto;
     color: $orange;
     @include mq("tablet") {
       width: 34.5%;
       max-width: 180px;
+      margin: initial;
     }
     &__date {
       font-size: 23px;
@@ -135,9 +137,7 @@
       max-width: 254px;
       padding-bottom: 30px;
       margin: auto;
-      @include mq("phone-small") {
-        max-width: 640px;
-      }
+      max-width: 640px;
       @include mq("phone") {
         padding-bottom: 49px;
       }
@@ -158,24 +158,59 @@
         margin-bottom: 20px;
       }
     }
+    &__reasons {
+      padding-bottom: 24px;
+      max-width: 640px;
+      margin: auto;
+      @include mq("tablet") {
+        max-width: 580px;
+        padding-bottom: 50px;
+        margin: initial;
+      }
+      @include mq("deskop-small") {
+        padding-bottom: 90px;
+      }
+      &-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 34px;
+        @include mq("tablet") {
+          align-items: center;
+          margin-bottom: 53px;
+        }
+        img {
+          width: 62px;
+          height: 51px;
+          margin-right: 24px;
+          @include mq("tablet") {
+            width: 68px;
+            height: 57px;
+            margin-right: 35.6px;
+          }
+        }
+      }
+    }
     &__statistics {
       font-family: "TT Commons";
       font-size: 46px;
       color: $orange;
-      max-width: 620px;
+      max-width: 640px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       line-height: 0.989;
       font-weight: 500;
-      margin-bottom: 0;
+      padding-bottom: 0;
+      margin: auto;
       @include mq("tablet") {
-        margin-bottom: 40px;
+        max-width: 620px;
+        padding-bottom: 40px;
+        margin: initial;
       }
       @include mq("desktop-small") {
         font-size: 54px;
-        margin-bottom: 40px;
+        padding-bottom: 40px;
       }
       span {
         position: relative;
@@ -244,6 +279,9 @@
       @include mq("phone") {
         flex-direction: row;
       }
+      @include mq("tablet") {
+        margin: initial;
+      }
       p {
         line-height: 1.025;
       }
@@ -284,6 +322,11 @@
     }
     &__contact {
       font-family: TT Commons;
+      max-width: 640px;
+      margin: auto;
+      @include mq("tablet") {
+        margin: initial;
+      }
       a {
         position: relative;
         display: inline-block;
@@ -326,7 +369,13 @@
     }
   }
   &-featured__image {
-    margin-bottom: 43px;
+    padding-bottom: 43px;
+    margin: auto;
+    max-width: 640px;
+    @include mq("tablet") {
+      margin: initial;
+      max-width: initial;
+    }
   }
   &.vi-page {
     padding: 34px 0 42px;
@@ -368,34 +417,6 @@
         @include mq("desktop-small") {
           width: 325px;
           height: 325px;
-        }
-      }
-    }
-    .article-content {
-      &__reasons {
-        max-width: 580px;
-        margin-bottom: 24px;
-        @include mq("tablet") {
-          margin-bottom: 140px;
-        }
-        &-item {
-          display: flex;
-          align-items: flex-start;
-          margin-bottom: 34px;
-          @include mq("tablet") {
-            align-items: center;
-            margin-bottom: 53px;
-          }
-          img {
-            width: 62px;
-            height: 51px;
-            margin-right: 24px;
-            @include mq("tablet") {
-              width: 68px;
-              height: 57px;
-              margin-right: 35.6px;
-            }
-          }
         }
       }
     }
