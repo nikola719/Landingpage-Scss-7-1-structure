@@ -30,6 +30,11 @@ textarea {
   border-radius: 40px;
   border: 1px solid $light-gray;
   padding: 7px 37px;
+  @extend .transition;
+  &:hover {
+    box-shadow: 0 0 15px 0 rgba(38, 38, 38, 0.25);
+    @extend .transition;
+  }
   @include heading5("medium");
   @include mq("tablet") {
     padding: 13px 58px;

@@ -44,7 +44,7 @@ ul {
   padding-left: 0;
   list-style: none; }
 
-.transition, .header, .header-nav__logo .pic-svg svg, .header-nav__logo span, .header-nav .menu-item, .header-nav .menu-item a::before, .header-nav-social__item, .header-nav-social__item:hover, .header.active .header-nav__logo .pic-svg svg path, .header.active .header-nav__logo span, .header.active .header-nav .menu-item, .header.is-hidden, .footer-menu__items .menu-item a::before, .footer-email::before, .footer-social__items .menu-item, .footer-social__items .menu-item:hover, .slick-arrow, .slick-arrow:hover, .start-icon, .start-icon-hover, .podcast-media__item::before, .podcast.vi-page .podcast-carousel__single p, .podcast.vi-page .podcast-carousel__single.active .abstraction p, .action-call__link::before, .error-redirect::before, .learn-more .section-text-wrapper a::before, .category-card:hover .category-name, .category-card:hover .category-title, .category-card:hover.media .category-name, .category-card:hover.media .category-title, .category-card:hover .start-icon, .category-card:hover .start-icon-hover, .category-name, .category-title, .category-explore__item::before, .artint-filter__item, .artint-filter__item:hover, .artint-filter__item .filter-text, .artint-filter__item .filter-cancel, .artint-filter__item.filtered, .artint-filter__item.filtered .filter-text, .artint-filter__item.filtered .filter-cancel, .artint-read__link::before, .episode__link::before, .episode-img__container:hover .start-icon, .episode-img__container:hover .start-icon-hover, .episode-img__container.active .start-icon, .episode-img__container.active .start-icon-hover, .episode-img__container.active .stop-icon, .episode-img__container.active:hover .stop-icon, .article-meta__player .meta-play, .article-meta__player .meta-stop, .article-meta__player.active .meta-play, .article-meta__player.active .meta-stop, .article-content__media .media-item a::before {
+.transition, .header, .header-nav__logo .pic-svg svg, .header-nav__logo span, .header-nav .menu-item, .header-nav .menu-item a::before, .header-nav-social__item, .header-nav-social__item:hover, .header.active .header-nav__logo .pic-svg svg path, .header.active .header-nav__logo span, .header.active .header-nav .menu-item, .header.is-hidden, .footer-menu__items .menu-item a::before, .footer-email::before, .footer-social__items .menu-item, .footer-social__items .menu-item:hover, .slick-arrow, .slick-arrow:hover, .btn-submit, .btn-submit:hover, .start-icon, .start-icon-hover, .podcast-media__item::before, .podcast-carousel__wrapper .image-wrapper .stop:hover, .podcast-carousel__details .start:hover, .podcast.vi-page .podcast-carousel__single p, .podcast.vi-page .podcast-carousel__single.active .abstraction p, .action-call__link::before, .error-redirect::before, .learn-more .section-text-wrapper a::before, .category-card:hover .category-name, .category-card:hover .category-title, .category-card:hover.media .category-name, .category-card:hover.media .category-title, .category-card:hover .start-icon, .category-card:hover .start-icon-hover, .category-name, .category-title, .category-explore__item::before, .artint-filter__item, .artint-filter__item:hover, .artint-filter__item .filter-text, .artint-filter__item .filter-cancel, .artint-filter__item.filtered, .artint-filter__item.filtered .filter-text, .artint-filter__item.filtered .filter-cancel, .artint-read__link::before, .episode__link::before, .episode-img__container:hover .start-icon, .episode-img__container:hover .start-icon-hover, .episode-img__container.active .start-icon, .episode-img__container.active .start-icon-hover, .episode-img__container.active .stop-icon, .episode-img__container.active:hover .stop-icon, .article-meta__player .meta-play, .article-meta__player .meta-stop, .article-meta__player.active .meta-play, .article-meta__player.active .meta-stop, .article-meta__share__item a, .article-meta__share__item a:hover, .article-content__media .media-item a::before {
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s; }
 
@@ -639,6 +639,9 @@ textarea {
   padding: 7px 37px;
   font-size: 26px;
   line-height: 1.025; }
+  .btn-submit:hover {
+    -webkit-box-shadow: 0 0 15px 0 rgba(38, 38, 38, 0.25);
+            box-shadow: 0 0 15px 0 rgba(38, 38, 38, 0.25); }
   @media only screen and (min-width: 768px) {
     .btn-submit {
       font-size: 28px; } }
@@ -883,6 +886,9 @@ br {
           z-index: 10;
           cursor: pointer;
           opacity: 0; }
+          .podcast-carousel__wrapper .image-wrapper .stop:hover {
+            -webkit-transform: translate(-50%, -50%) scale(1.2);
+                    transform: translate(-50%, -50%) scale(1.2); }
     .podcast-carousel__details {
       position: relative;
       background: #fe9a22;
@@ -922,6 +928,9 @@ br {
         cursor: pointer;
         margin-right: 0;
         opacity: 1; }
+        .podcast-carousel__details .start:hover {
+          -webkit-transform: scale(1.2);
+                  transform: scale(1.2); }
         @media only screen and (min-width: 768px) {
           .podcast-carousel__details .start {
             margin-right: 10px; } }
@@ -2003,10 +2012,21 @@ br {
       border-bottom: 1.5px solid #fe9a22; }
     .article-meta__player {
       position: relative;
-      width: 296px;
-      height: 296px;
+      width: 100%;
+      height: 316px;
       margin: auto;
       margin-bottom: 90px; }
+      @media only screen and (min-width: 375px) {
+        .article-meta__player {
+          width: 316px; } }
+      @media only screen and (min-width: 768px) {
+        .article-meta__player {
+          width: 235px;
+          height: 235px; } }
+      @media only screen and (min-width: 1024px) {
+        .article-meta__player {
+          width: 296px;
+          height: 296px; } }
       .article-meta__player img {
         position: absolute;
         top: 50%;
@@ -2062,6 +2082,11 @@ br {
           margin-bottom: 0; } }
     .article-meta__share__item {
       padding-right: 13px; }
+      .article-meta__share__item a {
+        display: inline-block; }
+        .article-meta__share__item a:hover {
+          -webkit-transform: scale(1.2);
+                  transform: scale(1.2); }
   .article-content {
     width: 100%;
     font-family: Roboto; }

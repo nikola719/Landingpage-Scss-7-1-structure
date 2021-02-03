@@ -32,10 +32,21 @@
     }
     &__player {
       position: relative;
-      width: 296px;
-      height: 296px;
+      width: 100%;
+      height: 316px;
       margin: auto;
       margin-bottom: 90px;
+      @include mq("phone-small") {
+        width: 316px;
+      }
+      @include mq("tablet") {
+        width: 235px;
+        height: 235px;
+      }
+      @include mq("desktop-small") {
+        width: 296px;
+        height: 296px;
+      }
       img {
         position: absolute;
         top: 50%;
@@ -92,7 +103,6 @@
         }
       }
     }
-
     &__share__items {
       margin-top: 16px;
       display: flex;
@@ -103,6 +113,14 @@
     }
     &__share__item {
       padding-right: 13px;
+      a {
+        display: inline-block;
+        @extend .transition;
+        &:hover {
+          transform: scale(1.2);
+          @extend .transition;
+        }
+      }
     }
   }
   &-content {

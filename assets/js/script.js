@@ -81,7 +81,7 @@ $(document).ready(function () {
       //youtube autoplay according to play button click event
       if ($(".movie-youtube")) {
         const timestamp = $(this).parent().attr("timestamp");
-        let new_youtube = old_youtube + "?t=" + timestamp + "&autoplay=1";
+        let new_youtube = old_youtube + "?start=" + timestamp + "&autoplay=1";
         $(".movie-youtube").attr("src", new_youtube);
       }
       //podcast play

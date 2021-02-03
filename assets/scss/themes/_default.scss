@@ -265,6 +265,10 @@ br {
           z-index: $z-header;
           cursor: pointer;
           opacity: 0;
+          &:hover {
+            transform: translate(-50%, -50%) scale(1.2);
+            @extend .transition;
+          }
           @extend .cubic-transition;
         }
       }
@@ -297,6 +301,10 @@ br {
         cursor: pointer;
         margin-right: 0;
         opacity: 1;
+        &:hover {
+          transform: scale(1.2);
+          @extend .transition;
+        }
         @extend .cubic-transition;
         @include mq("tablet") {
           margin-right: 10px;
