@@ -2004,7 +2004,9 @@ br {
     .article-meta__player {
       position: relative;
       width: 296px;
-      height: 296px; }
+      height: 296px;
+      margin: auto;
+      margin-bottom: 90px; }
       .article-meta__player img {
         position: absolute;
         top: 50%;
