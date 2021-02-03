@@ -1317,18 +1317,24 @@ br {
     row-gap: 39px;
     -webkit-column-gap: 40px;
             column-gap: 40px;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-areas: "card-1" "card-2" "card-3" "card-4" "card-5" "card-7" "card-6";
-    max-width: 400px; }
-    @media only screen and (min-width: 640px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "card-1 card-2 card-3" "card-4 card-4 card-5" "card-6 card-7 card-7";
+    max-width: 1322px; }
+    @media only screen and (max-width: 1199px) {
       .category .container {
-        max-width: 1322px;
+        -webkit-column-gap: 20px;
+                column-gap: 20px; } }
+    @media only screen and (max-width: 1023px) {
+      .category .container {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "card-1 card-2" "card-4 card-4" "card-3 card-5" "card-7 card-7" "card-6 ."; } }
-    @media only screen and (min-width: 1024px) {
+        grid-template-areas: "card-1 card-2" "card-4 card-4" "card-3 card-5" "card-7 card-7" "card-6 .";
+        -webkit-column-gap: 30px;
+                column-gap: 30px; } }
+    @media only screen and (max-width: 639px) {
       .category .container {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "card-1 card-2 card-3" "card-4 card-4 card-5" "card-6 card-7 card-7"; } }
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: "card-1" "card-2" "card-3" "card-4" "card-5" "card-7" "card-6";
+        max-width: 400px; } }
   .category-link {
     position: relative;
     display: block;

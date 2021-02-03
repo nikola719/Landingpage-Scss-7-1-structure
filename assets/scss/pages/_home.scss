@@ -74,15 +74,34 @@
     padding: 62px 0 47px;
   }
   .container {
-    display: grid;
-    grid-template-rows: auto;
-    row-gap: 39px;
-    column-gap: 40px;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-areas: "card-1" "card-2" "card-3" "card-4" "card-5" "card-7" "card-6";
-    max-width: 400px;
-    @include mq("tablet-small") {
-      max-width: 1322px;
+    // display: grid;
+    // grid-template-rows: auto;
+    // row-gap: 39px;
+    // column-gap: 40px;
+    // grid-template-columns: repeat(1, 1fr);
+    // grid-template-areas: "card-1" "card-2" "card-3" "card-4" "card-5" "card-7" "card-6";
+    // max-width: 400px;
+    // @include mq("tablet-small") {
+    //   max-width: 1322px;
+    // grid-template-columns: repeat(2, 1fr);
+    // grid-template-areas:
+    //   "card-1 card-2"
+    //   "card-4 card-4"
+    //   "card-3 card-5"
+    //   "card-7 card-7"
+    //   "card-6 .";
+    // }
+    // @include mq("desktop-small") {
+    //   grid-template-columns: repeat(3, 1fr);
+    // grid-template-areas:
+    //   "card-1 card-2 card-3"
+    //   "card-4 card-4 card-5"
+    //   "card-6 card-7 card-7";
+    // }
+    @include mq("desktop", max) {
+      column-gap: 20px;
+    }
+    @include mq("desktop-small", max) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
         "card-1 card-2"
@@ -90,14 +109,23 @@
         "card-3 card-5"
         "card-7 card-7"
         "card-6 .";
+      column-gap: 30px;
     }
-    @include mq("desktop-small") {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas:
-        "card-1 card-2 card-3"
-        "card-4 card-4 card-5"
-        "card-6 card-7 card-7";
+    @include mq("tablet-small", max) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas: "card-1" "card-2" "card-3" "card-4" "card-5" "card-7" "card-6";
+      max-width: 400px;
     }
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 39px;
+    column-gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "card-1 card-2 card-3"
+      "card-4 card-4 card-5"
+      "card-6 card-7 card-7";
+    max-width: 1322px;
   }
   &-link {
     position: relative;
