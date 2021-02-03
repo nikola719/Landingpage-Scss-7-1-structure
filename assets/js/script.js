@@ -17,9 +17,9 @@ $(document).ready(function () {
     $(this).toggleClass("active");
     $(".header").toggleClass("active");
     if ($(".header").hasClass("active")) {
-      $("body").css("overflow-y", "hidden");
+      $("html,body").css("overflow-y", "hidden");
     } else {
-      $("body").css("overflow-y", "visible");
+      $("html, body").css("overflow-y", "visible");
     }
   });
 
