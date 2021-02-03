@@ -16,10 +16,10 @@ $(document).ready(function () {
   $(document).on("click", ".hamburger", function () {
     $(this).toggleClass("active");
     $(".header").toggleClass("active");
-    if ($(this).hasClass("active")) {
-      $("body").append('<div class="overlay"></div>');
+    if ($(".header").hasClass("active")) {
+      $("body").css("overflow-y", "hidden");
     } else {
-      $("body .overlay").remove();
+      $("body").css("overflow-y", "visible");
     }
   });
 
