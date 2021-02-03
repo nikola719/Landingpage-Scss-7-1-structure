@@ -4,9 +4,12 @@
 
 //page styles
 main {
-  margin-top: 90px;
+  margin-top: 89px;
+  @include mq("tablet") {
+    margin-top: 102px;
+  }
   @include mq("desktop-small") {
-    margin-top: 132px;
+    margin-top: 131px;
   }
 }
 .section {

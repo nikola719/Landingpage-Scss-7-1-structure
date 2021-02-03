@@ -236,3 +236,9 @@
     }
   }
 }
+@mixin text-opacity() {
+  &:hover {
+    opacity: 0.7;
+    transition: all ease-in-out 0.3s;
+  }
+}

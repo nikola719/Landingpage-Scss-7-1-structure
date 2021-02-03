@@ -45,3 +45,10 @@
   &::after {
   }
 }
+.slick-arrow {
+  @extend .transition;
+  &:hover {
+    @extend .transition;
+    opacity: 0.7;
+  }
+}

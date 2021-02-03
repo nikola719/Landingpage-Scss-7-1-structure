@@ -74,6 +74,9 @@
   }
   &-email {
     margin-right: 5px;
+    position: relative;
+    @include menuEffect($white, "center");
+    @include hoverEffect();
     a {
       font-family: TT Commons;
       font-style: normal;

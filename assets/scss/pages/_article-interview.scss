@@ -40,6 +40,10 @@
         padding: 2px 8px 0px 14px;
         margin-bottom: 0;
       }
+      &:hover {
+        transform: scale(1.1);
+        @extend .transition;
+      }
       .filter-text {
         color: $light-gray;
         font-weight: 500;
@@ -54,6 +58,10 @@
         color: white;
         margin-left: 3px;
         opacity: 0;
+        &:hover {
+          color: $light-red;
+        }
+
         @extend .transition;
         @include mq("tablet") {
           font-size: 28px;
@@ -71,7 +79,7 @@
         }
         .filter-cancel {
           opacity: 1;
-          transition-delay: 0.4s;
+          // transition-delay: 0.2s;
           @extend .transition;
         }
       }
