@@ -459,7 +459,7 @@ br {
   height: calc(100vh - 90px);
   display: flex;
   align-items: center;
-  min-height: 320px;
+  min-height: 450px;
   @include mq("tablet") {
     height: calc(100vh - 109px);
   }
