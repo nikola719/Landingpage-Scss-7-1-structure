@@ -33,12 +33,10 @@ br {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: none;
-  @include mq("tablet") {
-    display: block;
-    width: 150px;
-    height: 150px;
-  }
+  // display: none;
+  display: block;
+  width: 150px;
+  height: 150px;
   @include mq("desktop-small") {
     width: 192px;
     height: 192px;

@@ -672,12 +672,9 @@ br {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  display: none; }
-  @media only screen and (min-width: 768px) {
-    .start-icon-container {
-      display: block;
-      width: 150px;
-      height: 150px; } }
+  display: block;
+  width: 150px;
+  height: 150px; }
   @media only screen and (min-width: 1024px) {
     .start-icon-container {
       width: 192px;
