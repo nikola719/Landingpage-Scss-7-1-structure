@@ -44,7 +44,7 @@ ul {
   padding-left: 0;
   list-style: none; }
 
-.transition, .header, .header-nav__logo .pic-svg svg, .header-nav__logo span, .header-nav .menu-item, .header-nav .menu-item a::before, .header-nav-social__item, .header-nav-social__item:hover, .header.active .header-nav__logo .pic-svg svg path, .header.active .header-nav__logo span, .header.active .header-nav .menu-item, .header.is-hidden, .footer-menu__items .menu-item a::before, .footer-email::before, .footer-social__items .menu-item, .footer-social__items .menu-item:hover, .slick-arrow, .slick-arrow:hover, .btn-submit, .btn-submit:hover, .start-icon, .start-icon-hover, .podcast-media__item::before, .podcast-carousel__wrapper .image-wrapper .stop:hover, .podcast-carousel__details .start:hover, .podcast.vi-page .podcast-carousel__single p, .podcast.vi-page .podcast-carousel__single.active .abstraction p, .action-call__link::before, .Requesterror-redirect::before, .learn-more .section-text-wrapper a::before, .category-card:hover .category-name, .category-card:hover .category-title, .category-card:hover.media .category-name, .category-card:hover.media .category-title, .category-card:hover .start-icon, .category-card:hover .start-icon-hover, .category-name, .category-title, .category-explore__item::before, .artint-filter__item, .artint-filter__item:hover, .artint-filter__item .filter-text, .artint-filter__item .filter-cancel, .artint-filter__item.filtered, .artint-filter__item.filtered .filter-text, .artint-filter__item.filtered .filter-cancel, .artint-read__link::before, .episode__link::before, .episode-img__container:hover .start-icon, .episode-img__container:hover .start-icon-hover, .episode-img__container.active .start-icon, .episode-img__container.active .start-icon-hover, .episode-img__container.active .stop-icon, .episode-img__container.active:hover .stop-icon, .article-meta__player .meta-play, .article-meta__player .meta-stop, .article-meta__player.active .meta-play, .article-meta__player.active .meta-stop, .article-meta__share__item a, .article-meta__share__item a:hover, .article-content__media .media-item a::before {
+.transition, .header, .header-nav__logo .pic-svg svg, .header-nav__logo span, .header-nav .menu-item, .header-nav .menu-item a::before, .header-nav-social__item, .header-nav-social__item:hover, .header.active .header-nav__logo .pic-svg svg path, .header.active .header-nav__logo span, .header.active .header-nav .menu-item, .header.active .header-nav-social__item, .header.is-hidden, .footer-menu__items .menu-item a::before, .footer-email::before, .footer-social__items .menu-item, .footer-social__items .menu-item:hover, .slick-arrow, .slick-arrow:hover, .btn-submit, .btn-submit:hover, .start-icon, .start-icon-hover, .podcast-media__item::before, .podcast-carousel__wrapper .image-wrapper .stop:hover, .podcast-carousel__details .start:hover, .podcast.vi-page .podcast-carousel__single p, .podcast.vi-page .podcast-carousel__single.active .abstraction p, .action-call__link::before, .Requesterror-redirect::before, .learn-more .section-text-wrapper a::before, .category-card:hover .category-name, .category-card:hover .category-title, .category-card:hover.media .category-name, .category-card:hover.media .category-title, .category-card:hover .start-icon, .category-card:hover .start-icon-hover, .category-name, .category-title, .category-explore__item::before, .artint-filter__item, .artint-filter__item:hover, .artint-filter__item .filter-text, .artint-filter__item .filter-cancel, .artint-filter__item.filtered, .artint-filter__item.filtered .filter-text, .artint-filter__item.filtered .filter-cancel, .artint-read__link::before, .episode__link::before, .episode-img__container:hover .start-icon, .episode-img__container:hover .start-icon-hover, .episode-img__container.active .start-icon, .episode-img__container.active .start-icon-hover, .episode-img__container.active .stop-icon, .episode-img__container.active:hover .stop-icon, .article-meta__player .meta-play, .article-meta__player .meta-stop, .article-meta__player.active .meta-play, .article-meta__player.active .meta-stop, .article-meta__share__item a, .article-meta__share__item a:hover, .article-content__media .media-item a::before {
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s; }
 
@@ -195,6 +195,9 @@ p {
       height: 100vh;
       background: #fe9a22;
       opacity: 0; }
+      @media only screen and (min-width: 768px) {
+        .header-nav__container {
+          padding: 103px 22px; } }
       @media only screen and (min-width: 1024px) {
         .header-nav__container {
           position: relative;
@@ -279,13 +282,12 @@ p {
           padding: 0; } }
     .header-nav .menu-item {
       padding: 0;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
       opacity: 0;
       -webkit-transform: translateY(-30px);
               transform: translateY(-30px); }
       @media only screen and (min-width: 768px) {
         .header-nav .menu-item {
-          margin-bottom: 10px;
           opacity: initial;
           -webkit-transform: initial;
                   transform: initial; } }
@@ -325,20 +327,47 @@ p {
           .header-nav .menu-item a {
             color: inherit; } }
     .header-nav-social__items {
-      display: none;
-      line-height: 0.6; }
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      line-height: 0.6;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin-bottom: 0; }
       @media only screen and (min-width: 1024px) {
         .header-nav-social__items {
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
           -webkit-box-pack: justify;
               -ms-flex-pack: justify;
                   justify-content: space-between;
-          margin-left: 17px; } }
+          margin-left: 17px;
+          margin-bottom: 3px; } }
     .header-nav-social__item {
-      padding-left: 11px;
-      line-height: 0; }
+      -webkit-transform: translateY(-30px);
+              transform: translateY(-30px);
+      line-height: 0;
+      opacity: 0; }
+      .header-nav-social__item:not(:first-child) {
+        padding-left: 25px; }
+      .header-nav-social__item a {
+        display: inline-block;
+        width: 30px;
+        height: 30px; }
+        @media only screen and (min-width: 768px) {
+          .header-nav-social__item a {
+            width: initial;
+            height: initial; } }
+        .header-nav-social__item a img {
+          width: 100%; }
+      @media only screen and (min-width: 1024px) {
+        .header-nav-social__item {
+          -webkit-transform: initial;
+                  transform: initial;
+          opacity: 1;
+          padding-left: 11px; } }
       .header-nav-social__item:hover {
         -webkit-transform: scale(1.2);
                 transform: scale(1.2); }
@@ -362,6 +391,12 @@ p {
               transform: translateY(0);
       -webkit-transition-delay: 0.3s;
               transition-delay: 0.3s; }
+    .header.active .header-nav-social__item {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      -webkit-transition-delay: 0.5s;
+              transition-delay: 0.5s; }
   .header.is-hidden {
     -webkit-transform: translateY(-90px);
             transform: translateY(-90px); }
@@ -536,7 +571,8 @@ p {
   .footer-social__items {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    margin-bottom: 2px; }
     .footer-social__items .menu-item {
       padding-left: 12px; }
       .footer-social__items .menu-item:hover {
@@ -614,6 +650,7 @@ textarea {
   resize: none;
   border-color: #bdbdbd;
   height: initial;
+  border-radius: initial;
   font-size: 26px;
   line-height: 1.025; }
   @media only screen and (min-width: 768px) {

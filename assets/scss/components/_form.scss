@@ -22,6 +22,7 @@ textarea {
   resize: none;
   border-color: $light-gray;
   height: initial;
+  border-radius: initial;
   @include heading5("medium");
   &::placeholder {
     color: $light-gray;

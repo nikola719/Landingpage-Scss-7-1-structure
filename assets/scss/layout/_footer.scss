@@ -88,6 +88,7 @@
   }
   &-social__items {
     display: flex;
+    margin-bottom: 2px;
     .menu-item {
       padding-left: 12px;
       @extend .transition;
