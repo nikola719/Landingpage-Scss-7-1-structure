@@ -684,8 +684,8 @@ textarea {
   font-size: 26px;
   line-height: 1.025; }
   .btn-submit:hover {
-    -webkit-box-shadow: 0 0 15px 0 rgba(38, 38, 38, 0.25);
-            box-shadow: 0 0 15px 0 rgba(38, 38, 38, 0.25); }
+    color: #fe9a22;
+    border: 1px solid #fe9a22; }
   @media only screen and (min-width: 768px) {
     .btn-submit {
       font-size: 28px; } }

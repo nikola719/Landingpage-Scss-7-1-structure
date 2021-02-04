@@ -39,7 +39,8 @@ textarea {
   padding: 7px 37px;
   @extend .transition;
   &:hover {
-    box-shadow: 0 0 15px 0 rgba(38, 38, 38, 0.25);
+    color: $orange;
+    border: 1px solid $orange;
     @extend .transition;
   }
   @include heading5("medium");
