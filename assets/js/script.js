@@ -190,6 +190,30 @@ $(document).ready(function () {
     $(this).closest(".article-meta").find(".cursor").css("left", 0);
   });
 
+  // Initialize form validation on the registration form.
+  $(function () {
+    $("form[name='contact']").validate({
+      rules: {
+        name: "required",
+        email: {
+          required: true,
+          email: true,
+        },
+        message: "required",
+      },
+      // Specify validation error messages
+      messages: {
+        name: "Please enter your name",
+        message: "Please enter your message",
+        email: "Please enter a valid email address",
+      },
+      // Make sure the form is submitted to the destination defined
+      // in the "action" attribute of the form when valid
+      submitHandler: function (form) {
+        form.submit();
+      },
+    });
+  });
   //Slick Carousel
   if ($(".podcast-carousel").length) {
     $(".podcast-carousel .podcast-carousel__container").slick({

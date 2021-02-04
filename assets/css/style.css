@@ -44,7 +44,7 @@ ul {
   padding-left: 0;
   list-style: none; }
 
-.transition, .header, .header-nav__logo .pic-svg svg, .header-nav__logo span, .header-nav .menu-item, .header-nav .menu-item a::before, .header-nav-social__item, .header-nav-social__item:hover, .header.active .header-nav__logo .pic-svg svg path, .header.active .header-nav__logo span, .header.active .header-nav .menu-item, .header.is-hidden, .footer-menu__items .menu-item a::before, .footer-email::before, .footer-social__items .menu-item, .footer-social__items .menu-item:hover, .slick-arrow, .slick-arrow:hover, .btn-submit, .btn-submit:hover, .start-icon, .start-icon-hover, .podcast-media__item::before, .podcast-carousel__wrapper .image-wrapper .stop:hover, .podcast-carousel__details .start:hover, .podcast.vi-page .podcast-carousel__single p, .podcast.vi-page .podcast-carousel__single.active .abstraction p, .action-call__link::before, .error-redirect::before, .learn-more .section-text-wrapper a::before, .category-card:hover .category-name, .category-card:hover .category-title, .category-card:hover.media .category-name, .category-card:hover.media .category-title, .category-card:hover .start-icon, .category-card:hover .start-icon-hover, .category-name, .category-title, .category-explore__item::before, .artint-filter__item, .artint-filter__item:hover, .artint-filter__item .filter-text, .artint-filter__item .filter-cancel, .artint-filter__item.filtered, .artint-filter__item.filtered .filter-text, .artint-filter__item.filtered .filter-cancel, .artint-read__link::before, .episode__link::before, .episode-img__container:hover .start-icon, .episode-img__container:hover .start-icon-hover, .episode-img__container.active .start-icon, .episode-img__container.active .start-icon-hover, .episode-img__container.active .stop-icon, .episode-img__container.active:hover .stop-icon, .article-meta__player .meta-play, .article-meta__player .meta-stop, .article-meta__player.active .meta-play, .article-meta__player.active .meta-stop, .article-meta__share__item a, .article-meta__share__item a:hover, .article-content__media .media-item a::before {
+.transition, .header, .header-nav__logo .pic-svg svg, .header-nav__logo span, .header-nav .menu-item, .header-nav .menu-item a::before, .header-nav-social__item, .header-nav-social__item:hover, .header.active .header-nav__logo .pic-svg svg path, .header.active .header-nav__logo span, .header.active .header-nav .menu-item, .header.is-hidden, .footer-menu__items .menu-item a::before, .footer-email::before, .footer-social__items .menu-item, .footer-social__items .menu-item:hover, .slick-arrow, .slick-arrow:hover, .btn-submit, .btn-submit:hover, .start-icon, .start-icon-hover, .podcast-media__item::before, .podcast-carousel__wrapper .image-wrapper .stop:hover, .podcast-carousel__details .start:hover, .podcast.vi-page .podcast-carousel__single p, .podcast.vi-page .podcast-carousel__single.active .abstraction p, .action-call__link::before, .Requesterror-redirect::before, .learn-more .section-text-wrapper a::before, .category-card:hover .category-name, .category-card:hover .category-title, .category-card:hover.media .category-name, .category-card:hover.media .category-title, .category-card:hover .start-icon, .category-card:hover .start-icon-hover, .category-name, .category-title, .category-explore__item::before, .artint-filter__item, .artint-filter__item:hover, .artint-filter__item .filter-text, .artint-filter__item .filter-cancel, .artint-filter__item.filtered, .artint-filter__item.filtered .filter-text, .artint-filter__item.filtered .filter-cancel, .artint-read__link::before, .episode__link::before, .episode-img__container:hover .start-icon, .episode-img__container:hover .start-icon-hover, .episode-img__container.active .start-icon, .episode-img__container.active .start-icon-hover, .episode-img__container.active .stop-icon, .episode-img__container.active:hover .stop-icon, .article-meta__player .meta-play, .article-meta__player .meta-stop, .article-meta__player.active .meta-play, .article-meta__player.active .meta-stop, .article-meta__share__item a, .article-meta__share__item a:hover, .article-content__media .media-item a::before {
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s; }
 
@@ -613,6 +613,7 @@ textarea {
   border-width: 0 0 1px 0;
   resize: none;
   border-color: #bdbdbd;
+  height: initial;
   font-size: 26px;
   line-height: 1.025; }
   @media only screen and (min-width: 768px) {
@@ -653,6 +654,9 @@ textarea {
   @media only screen and (min-width: 768px) {
     .btn-submit {
       padding: 13px 58px; } }
+
+.error {
+  color: #fe9a22; }
 
 main {
   margin-top: 89px; }
@@ -1089,7 +1093,7 @@ br {
     height: 50vw;
     max-height: 730px; }
 
-.error {
+.Requesterror {
   background-color: #fe9a22;
   height: calc(100vh - 90px);
   display: -webkit-box;
@@ -1100,40 +1104,40 @@ br {
           align-items: center;
   min-height: 450px; }
   @media only screen and (min-width: 768px) {
-    .error {
+    .Requesterror {
       height: calc(100vh - 109px); } }
   @media only screen and (min-width: 1024px) {
-    .error {
+    .Requesterror {
       height: calc(100vh - 132px); } }
-  .error-wrapper {
+  .Requesterror-wrapper {
     text-align: center; }
-  .error-title {
+  .Requesterror-title {
     color: #ffffff;
     font-size: 160px; }
     @media only screen and (min-width: 768px) {
-      .error-title {
+      .Requesterror-title {
         font-size: 240px; } }
     @media only screen and (min-width: 1024px) {
-      .error-title {
+      .Requesterror-title {
         font-size: 321px; } }
-  .error-subtitle {
+  .Requesterror-subtitle {
     font-size: 35px;
     line-height: 1.196;
     color: #ffffff;
     margin-bottom: 40px;
     max-width: 264px; }
     @media only screen and (min-width: 425px) {
-      .error-subtitle {
+      .Requesterror-subtitle {
         max-width: initial; } }
     @media only screen and (min-width: 768px) {
-      .error-subtitle {
+      .Requesterror-subtitle {
         font-size: 51px; } }
-  .error-redirect {
+  .Requesterror-redirect {
     display: inline-block;
     color: #302d2b;
     position: relative;
     padding-right: 20px; }
-    .error-redirect::after {
+    .Requesterror-redirect::after {
       position: absolute;
       content: "";
       border-style: solid;
@@ -1148,18 +1152,18 @@ br {
       -webkit-transition: all ease-in-out 0.3s;
       transition: all ease-in-out 0.3s; }
       @media only screen and (min-width: 1024px) {
-        .error-redirect::after {
+        .Requesterror-redirect::after {
           right: 0px; } }
       @media only screen and (min-width: 768px) {
-        .error-redirect::after {
+        .Requesterror-redirect::after {
           top: 38%;
           width: 10px;
           height: 10px; } }
-    .error-redirect:hover::before {
+    .Requesterror-redirect:hover::before {
       width: 100%;
       -webkit-transition: all ease-in-out 0.3s;
       transition: all ease-in-out 0.3s; }
-    .error-redirect::before {
+    .Requesterror-redirect::before {
       position: absolute;
       content: "";
       width: 0;
@@ -1167,11 +1171,11 @@ br {
       left: 0;
       bottom: 0;
       background-color: #ffffff; }
-    .error-redirect p {
+    .Requesterror-redirect p {
       line-height: 1.045;
       font-size: 26px; }
       @media only screen and (min-width: 768px) {
-        .error-redirect p {
+        .Requesterror-redirect p {
           font-size: 24px; } }
 
 .cookie {

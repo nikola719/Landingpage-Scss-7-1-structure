@@ -21,6 +21,7 @@ textarea {
   border-width: 0 0 1px 0;
   resize: none;
   border-color: $light-gray;
+  height: initial;
   @include heading5("medium");
   &::placeholder {
     color: $light-gray;
@@ -44,4 +45,7 @@ textarea {
   @include mq("tablet") {
     padding: 13px 58px;
   }
+}
+.error {
+  color: $orange;
 }
