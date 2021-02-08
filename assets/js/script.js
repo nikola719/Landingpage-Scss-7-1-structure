@@ -195,7 +195,7 @@ $(document).ready(function () {
     $(function () {
       $("form[name='contact']").validate({
         rules: {
-          name: "required",
+          fullname: "required",
           email: {
             required: true,
             email: true,
@@ -204,7 +204,7 @@ $(document).ready(function () {
         },
         // Specify validation error messages
         messages: {
-          name: "Please enter your name",
+          fullname: "Please enter your name",
           message: "Please enter your message",
           email: "Please enter a valid email address",
         },

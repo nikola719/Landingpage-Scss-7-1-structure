@@ -131,11 +131,11 @@
     @include mq("tablet") {
       width: 65.5%;
     }
-    &__title {
+
+    h5 {
       color: $orange;
       font-weight: 300;
-      max-width: 254px;
-      padding-bottom: 30px;
+      padding-bottom: 41px;
       margin: auto;
       max-width: 640px;
       @include mq("phone") {
@@ -146,48 +146,61 @@
         padding-bottom: 61px;
       }
     }
-    &__wrapper {
+    p {
+      font-size: 16px;
+      line-height: 1.405;
+      letter-spacing: 0.015em;
       max-width: 640px;
-      padding-bottom: 45px;
       margin: auto;
+      margin-bottom: 20px;
       @include mq("tablet") {
+        font-size: 18px;
         max-width: 620px;
         margin: initial;
-      }
-      p {
         margin-bottom: 20px;
       }
     }
-    &__reasons {
-      padding-bottom: 24px;
-      max-width: 640px;
-      margin: auto;
+    img {
+      padding-top: 20px;
+      padding-bottom: 43px;
       @include mq("tablet") {
-        max-width: 580px;
-        padding-bottom: 50px;
-        margin: initial;
       }
-      @include mq("deskop-small") {
-        padding-bottom: 90px;
-      }
-      &-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 34px;
+    }
+    q {
+      position: relative;
+      max-width: 550px;
+      width: 100%;
+      display: inline-block;
+      font-size: 20px;
+      line-height: 1.315;
+      color: $orange;
+      font-weight: 300;
+      padding-bottom: 50px;
+      padding-left: 40px;
+      margin-left: 0;
+      margin-top: 30px;
+      &::before {
+        position: absolute;
+        content: "";
+        background-image: url("../../assets/images/comment.png");
+        background-repeat: no-repeat;
+        top: 10px;
+        background-size: cover;
+        width: 26px;
+        height: 26px;
+        left: 0;
         @include mq("tablet") {
-          align-items: center;
-          margin-bottom: 53px;
+          left: -85px;
+          width: 47px;
+          height: 47px;
         }
-        img {
-          width: 62px;
-          height: 51px;
-          margin-right: 24px;
-          @include mq("tablet") {
-            width: 68px;
-            height: 57px;
-            margin-right: 35.6px;
-          }
-        }
+      }
+      @include mq("tablet") {
+        margin-left: -6vw;
+        width: calc(100% + 6vw);
+        font-size: 28px;
+        padding-bottom: 61px;
+        padding-left: 0;
       }
     }
     &__statistics {
@@ -202,15 +215,16 @@
       line-height: 0.989;
       font-weight: 500;
       padding-bottom: 0;
+      padding-top: 20px;
       margin: auto;
       @include mq("tablet") {
         max-width: 620px;
+        padding-top: 40px;
         padding-bottom: 40px;
         margin: initial;
       }
       @include mq("desktop-small") {
         font-size: 54px;
-        padding-bottom: 40px;
       }
       span {
         position: relative;
@@ -246,27 +260,39 @@
         }
       }
     }
-    &__comment {
+    &__reasons {
       max-width: 640px;
-      display: flex;
-      justify-content: flex-start;
-      margin-left: 0;
+      margin: auto;
       @include mq("tablet") {
-        margin-left: -24%;
-        justify-content: space-between;
+        max-width: 580px;
+        padding-bottom: 20px;
+        margin: initial;
       }
-      img {
-        margin-top: 10px;
-        margin-right: 20px;
-        width: 26px;
-        height: 26px;
+      @include mq("desktop-small") {
+        padding-bottom: 60px;
+      }
+      &-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 34px;
         @include mq("tablet") {
-          width: 47px;
-          height: 47px;
+          align-items: center;
+          margin-bottom: 53px;
         }
-      }
-      h5 {
-        max-width: 550px;
+        img {
+          width: 62px;
+          height: 51px;
+          margin-right: 24px;
+          padding: 0;
+          @include mq("tablet") {
+            width: 68px;
+            height: 57px;
+            margin-right: 35.6px;
+          }
+        }
+        p {
+          margin: 0;
+        }
       }
     }
     &__related {
@@ -299,11 +325,13 @@
       font-size: 28px;
       text-align: center;
       padding-bottom: 0;
+      padding-top: 20px;
       @include mq("tablet") {
         flex-direction: row;
         font-size: 24px;
         text-align: left;
         padding-bottom: 60px;
+        padding-top: 40px;
       }
       .media-item {
         margin-right: 0;
@@ -324,6 +352,7 @@
       font-family: TT Commons;
       max-width: 640px;
       margin: auto;
+      padding-top: 30px;
       @include mq("tablet") {
         margin: initial;
       }
@@ -334,6 +363,9 @@
         padding-right: 10px;
         @include p-arrow("right");
         @include p-arrowEffect("right");
+        h5 {
+          padding: 0;
+        }
       }
     }
     &__prev {
@@ -341,11 +373,12 @@
       margin-top: 10px;
       @include mq("phone") {
         order: 0;
-        margin-top: 60px;
+        margin-top: 100px;
       }
       h5 {
         position: relative;
         padding-left: 10px;
+        padding-bottom: 0;
         @include mq("desktop-small") {
           padding-left: 15px;
         }
@@ -358,23 +391,15 @@
       margin-top: 0;
       @include mq("phone") {
         order: 0;
-        margin-top: 60px;
+        margin-top: 100px;
       }
       h5 {
         position: relative;
         padding-right: 15px;
+        padding-bottom: 0;
         @include p-arrow("right");
         @include p-arrowEffect("right");
       }
-    }
-  }
-  &-featured__image {
-    padding-bottom: 43px;
-    margin: auto;
-    max-width: 640px;
-    @include mq("tablet") {
-      margin: initial;
-      max-width: initial;
     }
   }
   &.vi-page {
@@ -420,6 +445,14 @@
         }
       }
     }
+    .article-content {
+      h5 {
+        padding-top: 30px;
+      }
+    }
+    @include mq("tablet") {
+      padding: 120px 0 120px;
+    }
   }
   &.contacts {
     .article-meta {
@@ -433,6 +466,17 @@
       @include mq("desktop-small") {
         margin: initial;
       }
+    }
+  }
+  &.policy {
+    padding: 20px 0 60px;
+    .article-content {
+      h5 {
+        padding: 40px 0;
+      }
+    }
+    @include mq("tablet") {
+      padding: 70px 0 60px;
     }
   }
 }
