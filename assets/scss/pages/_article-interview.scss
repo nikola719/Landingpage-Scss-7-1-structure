@@ -3,6 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .artint {
+  background: $white;
   padding: 30px 0 65px;
   @include mq("phablet") {
     padding: 47px 0 69px;

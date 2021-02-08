@@ -3,6 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .article {
+  background: $white;
   padding: 34px 0 45px;
   @include mq("tablet") {
     padding: 120px 0 60px;
@@ -447,7 +448,7 @@
     }
     .article-content {
       h5 {
-        padding-top: 30px;
+        // padding-top: 30px;
       }
     }
     @include mq("tablet") {
