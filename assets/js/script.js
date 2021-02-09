@@ -110,16 +110,17 @@ $(document).ready(function () {
   $(document).on("click", ".podcast-carousel__single .stop", function (e) {
     e.stopPropagation();
     $(this).closest(".podcast-carousel__single").removeClass("active");
-    if ($(".movie-youtube")) {
+    if ($(".movie-youtube").length > 0) {
       $(".movie-youtube").attr("src", "");
       $(".movie-youtube").attr("src", old_youtube);
+    } else {
+      $(this)
+        .closest(".podcast-carousel__single")
+        .find(".image-wrapper audio")
+        .get(0)
+        .pause();
+      carousel_playing = false;
     }
-    $(this)
-      .closest(".podcast-carousel__single")
-      .find(".image-wrapper audio")
-      .get(0)
-      .pause();
-    carousel_playing = false;
   });
   $(".podcast-carousel__container audio").each(function () {
     $(this).on("ended", function () {

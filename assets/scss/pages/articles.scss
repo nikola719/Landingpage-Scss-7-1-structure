@@ -148,26 +148,6 @@
         padding-bottom: 61px;
       }
     }
-    p {
-      font-size: 16px;
-      line-height: 1.405;
-      letter-spacing: 0.015em;
-      max-width: 640px;
-      margin: auto;
-      margin-bottom: 20px;
-      @include mq("tablet") {
-        font-size: 18px;
-        max-width: 620px;
-        margin: initial;
-        margin-bottom: 20px;
-      }
-    }
-    img {
-      padding-top: 20px;
-      padding-bottom: 43px;
-      @include mq("tablet") {
-      }
-    }
     q {
       position: relative;
       max-width: 550px;
@@ -203,6 +183,32 @@
         font-size: 28px;
         padding-bottom: 61px;
         padding-left: 0;
+      }
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.405;
+      letter-spacing: 0.015em;
+      max-width: 640px;
+      margin: auto;
+      margin-bottom: 20px;
+      @include mq("tablet") {
+        font-size: 18px;
+        max-width: 620px;
+        margin: initial;
+        margin-bottom: 20px;
+      }
+    }
+    &__paragraph {
+    }
+    &__img {
+      padding-top: 20px;
+      padding-bottom: 43px;
+      max-width: 640px;
+      margin: auto;
+      @include mq("tablet") {
+        max-width: initial;
+        margin: initial;
       }
     }
     &__statistics {
