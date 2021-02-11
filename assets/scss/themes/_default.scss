@@ -128,6 +128,9 @@ br {
 .podcast {
   background: $white;
   padding: 30px 0 22px;
+  .container {
+    padding: 0 10px;
+  }
   @include mq("tablet-small") {
     padding: 62px 0 45px;
   }

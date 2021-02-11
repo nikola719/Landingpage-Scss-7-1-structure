@@ -187,15 +187,21 @@
             animation-iteration-count: 1;
             animation-timing-function: cubic-bezier(0.8, 0.3, 0.3, 1);
             animation-fill-mode: none;
+            svg {
+              path {
+                fill: $orange;
+                @extend .cubic-transition;
+              }
+            }
           }
         }
       }
     }
     &__text {
       &:not(:first-child) {
-        font-size: 40px;
         line-height: 0;
-        margin-left: 5px;
+        margin-left: 8px;
+        margin-bottom: 3px;
         transform-origin: center center;
         transition-property: transform;
         animation-name: anti-rotate;
@@ -203,6 +209,11 @@
         animation-iteration-count: 1;
         animation-timing-function: cubic-bezier(0.8, 0.3, 0.3, 1);
         animation-fill-mode: none;
+        svg {
+          width: 17px;
+          height: 17px;
+          @extend .cubic-transition;
+        }
       }
     }
   }

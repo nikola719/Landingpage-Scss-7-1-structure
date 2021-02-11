@@ -17,15 +17,17 @@
     margin-bottom: 33px;
     color: $white;
     @include mq("tablet") {
-      margin-bottom: 93px;
+      margin-bottom: 57px;
     }
   }
   &-wrapper {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    align-items: flex-start;
     @include mq("tablet") {
       flex-direction: row;
+      align-items: flex-end;
     }
     &__left {
       order: 1;

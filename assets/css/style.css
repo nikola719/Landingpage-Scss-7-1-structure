@@ -45,11 +45,11 @@ ul {
   padding-left: 0;
   list-style: none; }
 
-.transition, .header, .header-nav__logo .pic-svg svg, .header-nav__logo span, .header-nav .menu-item, .header-nav .menu-item a::before, .header-nav-social__item, .header-nav-social__item:hover, .header.active .header-nav__logo .pic-svg svg path, .header.active .header-nav__logo span, .header.active .header-nav .menu-item, .header.active .header-nav-social__item, .header.is-hidden, .footer-menu__items .menu-item a::before, .footer-email::before, .footer-social__items .menu-item, .footer-social__items .menu-item:hover, .slick-arrow, .slick-arrow:hover, .btn-submit, .btn-submit:hover, .start-icon, .start-icon-hover, .podcast-media__item::before, .podcast-carousel__wrapper .image-wrapper .stop:hover, .podcast-carousel__details .start:hover, .podcast.vi-page .podcast-carousel__single p, .podcast.vi-page .podcast-carousel__single.active .abstraction p, .action-call__link::before, .Requesterror-redirect::before, .learn-more .section-text-wrapper a::before, .category-card:hover .category-name, .category-card:hover .category-title, .category-card:hover.media .category-name, .category-card:hover.media .category-title, .category-card:hover .start-icon, .category-card:hover .start-icon-hover, .category-name, .category-title, .category-explore__item::before, .artint-filter__item, .artint-filter__item .filter-text, .artint-filter__item .filter-cancel, .artint-filter__item.filtered, .artint-filter__item.filtered .filter-text, .artint-filter__item.filtered .filter-cancel, .artint-read__link::before, .episode__link::before, .episode-img__container:hover .start-icon, .episode-img__container:hover .start-icon-hover, .episode-img__container.active .start-icon, .episode-img__container.active .start-icon-hover, .episode-img__container.active .stop-icon, .episode-img__container.active:hover .stop-icon, .article-meta__player .meta-play, .article-meta__player .meta-stop, .article-meta__player.active .meta-play, .article-meta__player.active .meta-stop, .article-meta__share__item a, .article-meta__share__item a:hover, .article-content__media .media-item a::before {
+.transition, .header, .header-nav__logo .pic-svg svg, .header-nav__logo span, .header-nav .menu-item, .header-nav .menu-item a::before, .header-nav-social__item a, .header-nav-social__item a:hover, .header.active .header-nav__logo .pic-svg svg path, .header.active .header-nav__logo span, .header.active .header-nav .menu-item, .header.active .header-nav-social__item, .header.is-hidden, .footer-menu__items .menu-item a::before, .footer-email::before, .footer-social__items .menu-item, .footer-social__items .menu-item:hover, .slick-arrow, .slick-arrow:hover, .btn-submit, .btn-submit:hover, .start-icon, .start-icon-hover, .podcast-media__item::before, .podcast-carousel__wrapper .image-wrapper .stop:hover, .podcast-carousel__details .start:hover, .podcast.vi-page .podcast-carousel__single p, .podcast.vi-page .podcast-carousel__single.active .abstraction p, .action-call__link::before, .Requesterror-redirect::before, .learn-more .section-text-wrapper a::before, .category-card:hover .category-name, .category-card:hover .category-title, .category-card:hover.media .category-name, .category-card:hover.media .category-title, .category-card:hover .start-icon, .category-card:hover .start-icon-hover, .category-name, .category-title, .category-explore__item::before, .artint-filter__item, .artint-filter__item .filter-text, .artint-filter__item .filter-cancel, .artint-filter__item.filtered, .artint-filter__item.filtered .filter-text, .artint-filter__item.filtered .filter-cancel, .artint-read__link::before, .episode__link::before, .episode-img__container:hover .start-icon, .episode-img__container:hover .start-icon-hover, .episode-img__container.active .start-icon, .episode-img__container.active .start-icon-hover, .episode-img__container.active .stop-icon, .episode-img__container.active:hover .stop-icon, .article-meta__player .meta-play, .article-meta__player .meta-stop, .article-meta__player.active .meta-play, .article-meta__player.active .meta-stop, .article-meta__share__item a, .article-meta__share__item a:hover, .article-content__media .media-item a::before {
   -webkit-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s; }
 
-.cubic-transition, .header-nav__container, .header.active .header-nav__container, .podcast-carousel__single.active .podcast-carousel__wrapper::before, .podcast-carousel__single.active .image-wrapper .stop, .podcast-carousel__single.active .podcast-carousel__details .start, .podcast-carousel__single.active .podcast-carousel__details .abstraction-title, .podcast-carousel__wrapper::before, .podcast-carousel__wrapper .image-wrapper .stop, .podcast-carousel__details .abstraction-title, .podcast-carousel__details .start, .category-card::before, .category-card:hover::before, .article-content__statistics span::before {
+.cubic-transition, .header-nav__container, .header.active .header-nav__container, .podcast-carousel__single.active .podcast-carousel__wrapper::before, .podcast-carousel__single.active .image-wrapper .stop, .podcast-carousel__single.active .podcast-carousel__details .start, .podcast-carousel__single.active .podcast-carousel__details .abstraction-title, .podcast-carousel__wrapper::before, .podcast-carousel__wrapper .image-wrapper .stop, .podcast-carousel__details .abstraction-title, .podcast-carousel__details .start, .category-card::before, .category-card:hover::before, .artint-more__link:hover .artint-more__text:not(:first-child) svg path, .artint-more__text:not(:first-child) svg, .article-content__statistics span::before {
   -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
   transition: all 1s cubic-bezier(0.19, 1, 0.22, 1); }
 
@@ -363,15 +363,15 @@ p {
             height: initial; } }
         .header-nav-social__item a img {
           width: 100%; }
+        .header-nav-social__item a:hover {
+          -webkit-transform: scale(1.2);
+                  transform: scale(1.2); }
       @media only screen and (min-width: 1024px) {
         .header-nav-social__item {
           -webkit-transform: initial;
                   transform: initial;
           opacity: 1;
           padding-left: 11px; } }
-      .header-nav-social__item:hover {
-        -webkit-transform: scale(1.2);
-                transform: scale(1.2); }
   .header.active {
     padding: 0; }
     .header.active .container {
@@ -470,7 +470,7 @@ p {
     color: #ffffff; }
     @media only screen and (min-width: 768px) {
       .footer-title {
-        margin-bottom: 93px; } }
+        margin-bottom: 57px; } }
   .footer-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -481,13 +481,19 @@ p {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
-            flex-direction: column; }
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
     @media only screen and (min-width: 768px) {
       .footer-wrapper {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
             -ms-flex-direction: row;
-                flex-direction: row; } }
+                flex-direction: row;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end; } }
     .footer-wrapper__left {
       -webkit-box-ordinal-group: 2;
           -ms-flex-order: 1;
@@ -684,7 +690,8 @@ textarea {
   font-size: 26px;
   line-height: 1.025; }
   .btn-submit:hover {
-    color: #fe9a22;
+    color: #ffffff;
+    background-color: #fe9a22;
     border: 1px solid #fe9a22; }
   @media only screen and (min-width: 768px) {
     .btn-submit {
@@ -815,6 +822,8 @@ br {
 .podcast {
   background: #ffffff;
   padding: 30px 0 22px; }
+  .podcast .container {
+    padding: 0 10px; }
   @media only screen and (min-width: 640px) {
     .podcast {
       padding: 62px 0 45px; } }
@@ -1999,10 +2008,12 @@ br {
                   animation-timing-function: cubic-bezier(0.8, 0.3, 0.3, 1);
           -webkit-animation-fill-mode: none;
                   animation-fill-mode: none; }
+          .artint-more__link:hover .artint-more__text:not(:first-child) svg path {
+            fill: #fe9a22; }
     .artint-more__text:not(:first-child) {
-      font-size: 40px;
       line-height: 0;
-      margin-left: 5px;
+      margin-left: 8px;
+      margin-bottom: 3px;
       -webkit-transform-origin: center center;
               transform-origin: center center;
       -webkit-transition-property: -webkit-transform;
@@ -2019,6 +2030,9 @@ br {
               animation-timing-function: cubic-bezier(0.8, 0.3, 0.3, 1);
       -webkit-animation-fill-mode: none;
               animation-fill-mode: none; }
+      .artint-more__text:not(:first-child) svg {
+        width: 17px;
+        height: 17px; }
   .artint.vi-watch {
     padding: 30px 0 65px; }
     @media only screen and (min-width: 560px) {
@@ -2454,11 +2468,28 @@ br {
                 -ms-flex-align: center;
                     align-items: center;
             margin-bottom: 53px; } }
+        .article-content__reasons-item:nth-child(2) img {
+          width: 62px;
+          height: 39px;
+          margin-right: 22px;
+          margin-top: 6px; }
+          @media only screen and (min-width: 425px) {
+            .article-content__reasons-item:nth-child(2) img {
+              margin-top: 0; } }
+          @media only screen and (min-width: 768px) {
+            .article-content__reasons-item:nth-child(2) img {
+              width: 78px;
+              height: 49px;
+              margin-right: 25.6px; } }
         .article-content__reasons-item img {
           width: 62px;
           height: 51px;
           margin-right: 24px;
+          margin-top: 6px;
           padding: 0; }
+          @media only screen and (min-width: 425px) {
+            .article-content__reasons-item img {
+              margin-top: 0; } }
           @media only screen and (min-width: 768px) {
             .article-content__reasons-item img {
               width: 68px;
