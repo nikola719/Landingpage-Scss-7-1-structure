@@ -367,7 +367,7 @@ br {
       width: 100%;
       order: 1;
       @include mq("phablet") {
-        width: 56%;
+        width: 54%;
         order: 0;
       }
     }

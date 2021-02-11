@@ -26,7 +26,7 @@
     width: 100%;
     order: 1;
     @include mq("tablet-small") {
-      width: 56%;
+      width: 54%;
       order: 0;
     }
   }

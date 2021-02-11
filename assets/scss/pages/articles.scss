@@ -7,7 +7,7 @@
   padding: 34px 0 45px;
   margin-top: -1px;
   @include mq("tablet") {
-    padding: 120px 0 60px;
+    padding: 100px 0 60px;
   }
   .container {
     display: flex;
@@ -137,15 +137,12 @@
     h5 {
       color: $orange;
       font-weight: 300;
-      padding-bottom: 41px;
+      padding-bottom: 40px;
       margin: auto;
       max-width: 640px;
-      @include mq("phone") {
-        padding-bottom: 49px;
-      }
       @include mq("tablet") {
         margin: initial;
-        padding-bottom: 61px;
+        padding-bottom: 50px;
       }
     }
     q {
@@ -157,10 +154,9 @@
       line-height: 1.315;
       color: $orange;
       font-weight: 300;
-      padding-bottom: 50px;
+      padding-bottom: 40px;
       padding-left: 40px;
       margin-left: 0;
-      margin-top: 30px;
       &::before {
         position: absolute;
         content: "";
@@ -181,7 +177,7 @@
         margin-left: -6vw;
         width: calc(100% + 6vw);
         font-size: 28px;
-        padding-bottom: 61px;
+        padding-bottom: 50px;
         padding-left: 0;
       }
     }
@@ -200,15 +196,19 @@
       }
     }
     &__paragraph {
+      padding-bottom: 20px;
+      @include mq("tablet") {
+        padding-bottom: 30px;
+      }
     }
     &__img {
-      padding-top: 20px;
-      padding-bottom: 43px;
+      padding-bottom: 40px;
       max-width: 640px;
       margin: auto;
       @include mq("tablet") {
         max-width: initial;
         margin: initial;
+        padding-bottom: 50px;
       }
     }
     &__statistics {
@@ -223,12 +223,10 @@
       line-height: 0.989;
       font-weight: 500;
       padding-bottom: 0;
-      padding-top: 20px;
       margin: auto;
       @include mq("tablet") {
         max-width: 620px;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-bottom: 10px;
         margin: initial;
       }
       @include mq("desktop-small") {
@@ -236,10 +234,8 @@
       }
       span {
         position: relative;
-        // border-top: 3px solid orange;
         padding-top: 15px;
         padding-bottom: 40px;
-        // border-width: 0;
         &:first-child {
           width: 29%;
           &::before {

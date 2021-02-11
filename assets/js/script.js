@@ -59,11 +59,7 @@ $(document).ready(function () {
 
   //filter select
   $(document).on("click", ".artint-filter__item", function () {
-    $(this).addClass("filtered");
-  });
-  $(document).on("click", ".filter-cancel", function (e) {
-    e.stopPropagation();
-    $(this).parent().removeClass("filtered");
+    $(this).toggleClass("filtered");
   });
 
   //playing podcast in carousel
@@ -73,6 +69,7 @@ $(document).ready(function () {
     { passive: true },
     function (e) {
       // switch the screen
+      e.stopPropagation();
       $(this)
         .closest(".podcast-carousel__container")
         .find(".podcast-carousel__single")
